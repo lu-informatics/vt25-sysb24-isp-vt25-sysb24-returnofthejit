@@ -1,11 +1,15 @@
-package whatscookin.ejb.ics;
+package whatscookin.ics.ejb;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -87,5 +91,14 @@ public class Recipe implements Serializable{
 	    this.date = date;
 	}	
 	
+	@OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 
+	public List<RecipeIngredient> getRecipeIngredients() {
+	    return recipeIngredients;
+	}
+
+	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+	    this.recipeIngredients = recipeIngredients;
+	}
 }
