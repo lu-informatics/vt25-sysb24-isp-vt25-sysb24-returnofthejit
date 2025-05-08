@@ -11,7 +11,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="Recipe")
 public class Recipe implements Serializable{
-	private long idRecipe;
+	private long recipeID;
+	private String recipeNo;
 	private String title;
 	private double cost;
 	private double time;
@@ -21,15 +22,24 @@ public class Recipe implements Serializable{
 	
 	
 	@Id
-	@Column(name = "idRecipe")
-	public long getIdRecipe() {
-	    return idRecipe;
+	@Column(name = "RecipeID")
+	public long getRecipeID() {
+	    return recipeID;
 	}
-	public void setIdRecipe(long idRecipe) {
-	    this.idRecipe = idRecipe;
+	public void setRecipeID(long recipeID) {
+	    this.recipeID = recipeID;
+	}
+	
+	@Column(name = "RecipeNo")
+	public String getRecipeNo() {
+		return recipeNo;
 	}
 
-	@Column(name = "title")
+	public void setRecipeNo(String recipeNo) {
+		this.recipeNo = recipeNo;
+	}
+
+	@Column(name = "Title")
 	public String getTitle() {
 	    return title;
 	}
@@ -37,7 +47,7 @@ public class Recipe implements Serializable{
 	    this.title = title;
 	}
 
-	@Column(name = "cost")
+	@Column(name = "RecipeCost")
 	public double getCost() {
 	    return cost;
 	}
@@ -45,7 +55,7 @@ public class Recipe implements Serializable{
 	    this.cost = cost;
 	}
 
-	@Column(name = "time")
+	@Column(name = "CookingTime")
 	public double getTime() {
 	    return time;
 	}
@@ -53,7 +63,7 @@ public class Recipe implements Serializable{
 	    this.time = time;
 	}
 
-	@Column(name = "instructions")
+	@Column(name = "RecipeInstructions")
 	public String getInstructions() {
 	    return instructions;
 	}
@@ -61,7 +71,7 @@ public class Recipe implements Serializable{
 	    this.instructions = instructions;
 	}
 
-	@Column(name = "description")
+	@Column(name = "RecipeDescription")
 	public String getDescription() {
 	    return description;
 	}
@@ -69,7 +79,7 @@ public class Recipe implements Serializable{
 	    this.description = description;
 	}
 
-	@Column(name = "date")
+	@Column(name = "CreatedAt")
 	public LocalDate getDate() {
 	    return date;
 	}
