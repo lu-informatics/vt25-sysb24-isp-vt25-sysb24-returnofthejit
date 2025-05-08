@@ -1,9 +1,9 @@
-package whatscookin.ics.facade;
+package se.ics.whatscookin.facade;
 
 import java.util.List;
 
 import jakarta.ejb.Local;
-import whatscookin.ics.ejb.Recipe;
+import se.ics.whatscookin.ejb.Recipe;
 
 @Local
 public interface RecipeFacadeLocal {

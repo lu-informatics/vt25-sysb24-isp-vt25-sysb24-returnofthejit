@@ -1,9 +1,9 @@
-package whatscookin.ics.facade;
+package se.ics.whatscookin.facade;
 
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
-import whatscookin.ics.eao.IngredientEAOLocal;
-import whatscookin.ics.ejb.Ingredient;
+import se.ics.whatscookin.eao.IngredientEAOLocal;
+import se.ics.whatscookin.ejb.Ingredient;
 
 import java.util.List;
 

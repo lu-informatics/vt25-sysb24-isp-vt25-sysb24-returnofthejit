@@ -1,9 +1,9 @@
-package whatscookin.ics.eao;
+package se.ics.whatscookin.eao;
 
 import java.util.List;
 
 import jakarta.ejb.Local;
-import whatscookin.ics.ejb.Ingredient;
+import se.ics.whatscookin.ejb.Ingredient;
 
 @Local
 public interface IngredientEAOLocal {

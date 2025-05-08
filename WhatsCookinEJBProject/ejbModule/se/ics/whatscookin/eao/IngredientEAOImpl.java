@@ -1,11 +1,11 @@
-package whatscookin.ics.eao;
+package se.ics.whatscookin.eao;
 
 import java.util.List;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import whatscookin.ics.ejb.Ingredient;
+import se.ics.whatscookin.ejb.Ingredient;
 
 /**
  * Session Bean implementation class IngredientEAOImpl

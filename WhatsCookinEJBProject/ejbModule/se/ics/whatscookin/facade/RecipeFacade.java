@@ -1,11 +1,11 @@
-package whatscookin.ics.facade;
+package se.ics.whatscookin.facade;
 
 import java.util.List;
 
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
-import whatscookin.ics.eao.RecipeEAOLocal;
-import whatscookin.ics.ejb.Recipe;
+import se.ics.whatscookin.eao.RecipeEAOLocal;
+import se.ics.whatscookin.ejb.Recipe;
 
 @Stateless
 public class RecipeFacade implements RecipeFacadeLocal {
