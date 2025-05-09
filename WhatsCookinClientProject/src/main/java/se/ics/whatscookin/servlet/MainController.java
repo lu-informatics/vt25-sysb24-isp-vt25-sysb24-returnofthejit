@@ -10,9 +10,9 @@ import java.io.IOException;
 /**
  * Servlet implementation class MainController
  * 
- * http://localhost:8080/WhatsCookin/MainController
+ * http://localhost:8080/WhatsCookin/Controller
  */
-@WebServlet("/MainController")
+@WebServlet("/controller")
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,7 +29,21 @@ public class MainController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String action = request.getParameter("action");
+
+        if (action == null || action.equals("home")) {
+            request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
+        } else if (action.equals("about")) {
+            request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
+        } else if (action.equals("recipefeed")) {
+            request.getRequestDispatcher("/jsp/recipefeed.jsp").forward(request, response);
+        } else if (action.equals("addrecipe")) {
+            request.getRequestDispatcher("/jsp/addrecipe.jsp").forward(request, response);
+        } else {
+            // fallback/error page
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "Page not found for action: " + action);
+        }
 	}
 
 	/**
