@@ -12,4 +12,5 @@ public interface RecipeFacadeLocal {
     public void addRecipe(Recipe recipe);
     public Recipe updateRecipe(Recipe recipe);
     public void removeRecipe(Recipe recipe);
+    void testLog();
 }

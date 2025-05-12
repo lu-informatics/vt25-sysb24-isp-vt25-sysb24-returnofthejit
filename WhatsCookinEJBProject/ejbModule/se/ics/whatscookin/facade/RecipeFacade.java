@@ -4,11 +4,18 @@ import java.util.List;
 
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
+import jakarta.interceptor.Interceptors;
 import se.ics.whatscookin.eao.RecipeEAOLocal;
 import se.ics.whatscookin.ejb.Recipe;
+import se.ics.whatscookin.interceptors.RecipeLogger;
 
 @Stateless
+@Interceptors(RecipeLogger.class)
 public class RecipeFacade implements RecipeFacadeLocal {
+	
+	public void testLog() {
+        System.out.println("testLog() inuti RecipeFacade");
+    }
 
     @EJB
     private RecipeEAOLocal recipeEAO;

@@ -18,6 +18,10 @@ public class Ingredient implements Serializable{
 	private String ingredientNo;
 	private String ingredientName;
 	
+	public Ingredient(String ingredientNo, String ingredientName) {
+		this.ingredientNo = ingredientNo;
+		this.ingredientName = ingredientName; 
+	}
 	
 	@Id
 	@Column(name = "IngredientID")
