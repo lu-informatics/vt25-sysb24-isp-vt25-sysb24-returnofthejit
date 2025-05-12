@@ -12,4 +12,5 @@ public interface RecipeEAOLocal {
 	public void createRecipe(Recipe recipe);
 	public Recipe updateRecipe(Recipe recipe);
 	public void deleteRecipe(Recipe recipe);
+	public String getNextRecipeNo();
 }
