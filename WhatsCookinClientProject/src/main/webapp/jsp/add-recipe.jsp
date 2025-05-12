@@ -7,7 +7,9 @@
   <title>Add Recipe</title>
 
   <!-- Local stylesheet -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add-recipe.css" />
+
 
   <!-- Fonts and Icons -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
@@ -44,11 +46,11 @@
         <div class="row">
           <div class="column">
             <label>Time (minutes):</label>
-            <input type="number" name="time" required />
+            <input class="timecost" type="number" name="time" required />
           </div>
           <div class="column">
             <label>Cost per portion in SEK:</label>
-            <input type="number" name="cost" required />
+            <input class="timecost" type="number" name="cost" required />
           </div>
         </div>
 
@@ -64,14 +66,14 @@
             </select>
           </div>
           <input type="text" class="quantity-input" placeholder="Quantity" name="quantity" />
-          <button type="button" class="add-ingredient-btn gtr">Add Ingredient</button>
+          <button type="button" class="add">Add Ingredient</button>
         </div>
 
         <label>Selected Ingredients:</label>
         <ul id="selected-ingredients"></ul>
 
         <div class="submit-wrapper">
-          <button type="submit" class="gtr">Add Recipe</button>
+          <button type="submit" class="add">Add Recipe</button>
         </div>
       </form>
     </main>

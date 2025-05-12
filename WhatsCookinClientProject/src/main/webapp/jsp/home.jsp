@@ -7,7 +7,8 @@
   <title>What's Cookin'</title>
 
   <!-- Länk till CSSen -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css" />
 
   <!-- Externa resurser (Font Awesome + Google Fonts) -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
@@ -19,6 +20,7 @@
     
     <%-- Include the sidebar (header.jsp) --%>
     <%@ include file="/fragments/sidebar.jsp" %>
+   
 
     <!-- Main Content -->
     <main class="home-content">
@@ -28,5 +30,9 @@
     </main>
     
   </div>
+  
+  <%-- Include the footer (footer.jsp) --%>
+  <%@ include file="/fragments/footer.jsp" %>
+  
 </body>
 </html>

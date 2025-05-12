@@ -1,0 +1,23 @@
+/* Common styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body , html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif, 'Moo Lah Lah', 'Inter';
+  background-color: #f9f9f9;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+}

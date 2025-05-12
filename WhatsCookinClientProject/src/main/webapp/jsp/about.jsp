@@ -7,7 +7,8 @@
   <title>About Us – What's Cookin'</title>
 
   <!-- Local stylesheet -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/about.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
 </head>
 <body>
-	<div class="layout">
+  <div class="layout">
 
 	<%-- Include the sidebar --%>
     <%@ include file="/fragments/sidebar.jsp" %>

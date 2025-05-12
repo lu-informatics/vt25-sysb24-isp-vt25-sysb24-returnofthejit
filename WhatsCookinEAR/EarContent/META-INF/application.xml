@@ -9,7 +9,7 @@
     <module>
         <web>
             <web-uri>WhatsCookinClientProject.war</web-uri>
-            <context-root>WhatsCookin</context-root>
+            <context-root>WhatsCookinClientProject</context-root>
         </web>
     </module>
     

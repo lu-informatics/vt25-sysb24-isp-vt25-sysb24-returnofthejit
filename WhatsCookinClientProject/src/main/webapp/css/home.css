@@ -1,0 +1,27 @@
+/* === Home Page Styles === */
+.hands-img {
+  width: 100%;         /* full viewport width */
+  height: 100%;         /* scale proportionally */
+}
+	
+#logo-home {
+	font-size: 4em;
+	padding: 30px 0px 10px;
+	color: #2d4c3f;
+	font-family: 'Moo Lah Lah';
+	text-align: center;
+	background-color: #fcfbfd;
+	margin: 0;
+	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#slogan {
+	font-size: 1.6em;
+	color: #2d4c3f;
+	font-family: 'Inter';
+	text-align: center;
+	background-color: #fcfbfd;
+	margin: 0;
+	padding: 0px 0px 30px;
+	font-weight: 600;
+}

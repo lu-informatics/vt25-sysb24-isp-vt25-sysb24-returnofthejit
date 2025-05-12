@@ -1,0 +1,218 @@
+/* === Add Recipe Page Styles === */
+.form-container {
+  flex: 1;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2d4c3f;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #2d4c3f;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle drop shadow */
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+input[type="number"]:focus,
+textarea:focus {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  border-color: #5f8772;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+#ingredient-select {
+  height: 50px;
+  min-width: 150px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Style the quantity field */
+.quantity-input {
+  flex: 2;
+  height: 50px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the button */
+.add-ingredient-btn {
+  padding: 12px 20px;
+  background-color: #5f8772;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Force the Tom Select wrapper to fill space */
+.ingredient-select-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.ingredient-select-wrapper .ts-wrapper {
+  width: 100%;
+}
+
+.ingredient-select-wrapper .ts-control {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  line-height: 1.2;
+}
+
+.ts-wrapper.single .ts-control {
+  display: flex;
+  padding: 0 12px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  align-items: center;
+}
+
+.ts-wrapper.single.input-active .ts-control {
+	flex-wrap: nowrap;
+	height: 50px;
+	align-items: center;
+}
+
+.ts-control {
+  display: flex !important;
+  align-items: center !important;
+  height: 50px !important;
+  padding: 0 12px !important;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.ts-control input {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
+}
+
+.ts-wrapper .ts-dropdown {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  flex: 1;
+  min-width: 0;
+}
+
+/* stops the cursor from blinking when an ingredient is chosen */
+.ts-wrapper.single.has-items .ts-control input {
+  display: none !important;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.timecost, input[type="number"] {
+	padding: 12px;
+	height: 50px;
+	border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle drop shadow */
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#selected-ingredients {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #333;
+}
+
+.submit-wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.add {
+  background-color: #5f8772;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 200px;
+}
+
+.add:hover {
+  background-color: #4e735f;
+}
+
+
+

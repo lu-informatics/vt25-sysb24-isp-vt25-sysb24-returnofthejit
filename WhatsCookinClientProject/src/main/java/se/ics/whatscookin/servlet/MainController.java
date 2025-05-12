@@ -37,9 +37,9 @@ public class MainController extends HttpServlet {
         } else if (action.equals("about")) {
             request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
         } else if (action.equals("recipefeed")) {
-            request.getRequestDispatcher("/jsp/recipefeed.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/recipe-feed.jsp").forward(request, response);
         } else if (action.equals("addrecipe")) {
-            request.getRequestDispatcher("/jsp/addrecipe.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/add-recipe.jsp").forward(request, response);
         } else {
             // fallback/error page
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Page not found for action: " + action);
