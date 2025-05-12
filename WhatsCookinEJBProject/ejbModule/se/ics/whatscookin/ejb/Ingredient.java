@@ -17,6 +17,7 @@ public class Ingredient implements Serializable{
 	private long ingredientID;
 	private String ingredientNo;
 	private String ingredientName;
+	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 	
 	public Ingredient(String ingredientNo, String ingredientName) {
 		this.ingredientNo = ingredientNo;
@@ -51,8 +52,6 @@ public class Ingredient implements Serializable{
     }
 	
 	@OneToMany(mappedBy = "ingredient")
-	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
-
 	public List<RecipeIngredient> getRecipeIngredients() {
 	    return recipeIngredients;
 	}
