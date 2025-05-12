@@ -19,32 +19,9 @@
 </head>
 <body>
   <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2 id="sidebar-logo">What’s Cookin’</h2>
-      <ul>
-        <li>
-          <a href="${pageContext.request.contextPath}/controller?action=home">
-            <i class="fas fa-house"></i><span> Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="${pageContext.request.contextPath}/controller?action=recipefeed">
-            <i class="fas fa-search"></i><span> Feed</span>
-          </a>
-        </li>
-        <li class="active">
-          <a href="${pageContext.request.contextPath}/controller?action=addrecipe">
-            <i class="fas fa-plus"></i><span> Add New Recipe</span>
-          </a>
-        </li>
-        <li>
-          <a href="${pageContext.request.contextPath}/controller?action=about">
-            <i class="fas fa-utensils"></i><span> About</span>
-          </a>
-        </li>
-      </ul>
-    </aside>
+  
+   	<%-- Include the sidebar --%>
+    <%@ include file="/fragments/sidebar.jsp" %>
 
     <!-- Form -->
     <main class="form-container">

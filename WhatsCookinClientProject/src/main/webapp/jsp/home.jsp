@@ -16,34 +16,9 @@
 </head>
 <body>
   <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2 id="sidebar-logo">What’s Cookin’</h2>
-      <nav>
-        <ul>
-          <li class="active">
-            <a href="${pageContext.request.contextPath}/controller?action=home">
-              <i class="fas fa-house"></i><span> Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/controller?action=recipefeed">
-              <i class="fas fa-search"></i><span> Feed</span>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/controller?action=addrecipe">
-              <i class="fas fa-plus"></i><span> Add new recipe</span>
-            </a>
-          </li>
-          <li>
-            <a href="${pageContext.request.contextPath}/controller?action=about">
-              <i class="fas fa-utensils"></i><span> About What's Cookin'</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+    
+    <%-- Include the sidebar (header.jsp) --%>
+    <%@ include file="/fragments/sidebar.jsp" %>
 
     <!-- Main Content -->
     <main class="home-content">
@@ -51,6 +26,7 @@
       <p id="slogan">Recipes worth sharing!</p>
       <img src="${pageContext.request.contextPath}/images/Home-page-hands-jpg.png" alt="Hands Image" class="hands-img" />
     </main>
+    
   </div>
 </body>
 </html>
