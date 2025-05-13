@@ -6,6 +6,7 @@ import java.util.Map;
 
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
+import jakarta.interceptor.Interceptors;
 import se.ics.whatscookin.eao.IngredientEAOLocal;
 import se.ics.whatscookin.eao.RecipeEAOLocal;
 import se.ics.whatscookin.ejb.AppUser;
@@ -13,8 +14,10 @@ import se.ics.whatscookin.ejb.Ingredient;
 import se.ics.whatscookin.ejb.Recipe;
 import se.ics.whatscookin.ejb.RecipeIngredient;
 import se.ics.whatscookin.ejb.RecipeIngredientId;
+import se.ics.whatscookin.interceptors.RecipeLogger;
 
 @Stateless
+@Interceptors(RecipeLogger.class)
 public class RecipeFacade implements RecipeFacadeLocal {
 
     @EJB
@@ -40,6 +43,11 @@ public class RecipeFacade implements RecipeFacadeLocal {
     public List<Recipe> getAllRecipes() {
         return recipeEAO.findAllRecipe();
     }
+    
+    public void addRecipe(Recipe recipe) {
+    	recipeEAO.createRecipe(recipe);
+    }
+    
 
     public void createRecipe(Recipe recipe, Map<Long, String> ingredientIdQuantityMap) {
         // Assign hardcoded WebUser
