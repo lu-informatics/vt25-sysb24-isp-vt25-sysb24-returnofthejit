@@ -18,6 +18,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PostPersist;
+import jakarta.persistence.PostRemove;
 import jakarta.persistence.PostUpdate;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -144,6 +145,13 @@ public class Recipe implements Serializable{
 	    System.out.println("[Callback] PostPersist: Receptet har nu sparats i databasen");
 	    System.out.println("Titel: " + title);
 	}
+	
+	@PostRemove
+	public void afterDelete() {
+	    System.out.println("[Callback] PostRemove: Receptet har tagits bort från databasen");
+	    System.out.println("Titel: " + title + ", ID: " + recipeID);
+	}
+
 	
 
 }

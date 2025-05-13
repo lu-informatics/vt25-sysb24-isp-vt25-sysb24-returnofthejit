@@ -39,6 +39,7 @@ public class RestRecipe extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setContentType("application/json");
 
@@ -73,6 +74,7 @@ public class RestRecipe extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
     	response.setHeader("Access-Control-Allow-Origin", "*");
         response.setContentType("application/json");
         String pathInfo = request.getPathInfo();
@@ -93,6 +95,7 @@ public class RestRecipe extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
     	response.setHeader("Access-Control-Allow-Origin", "*");
         response.setContentType("application/json");
         String pathInfo = request.getPathInfo();
@@ -120,7 +123,8 @@ public class RestRecipe extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "*");
+    	request.setCharacterEncoding("UTF-8");
+    	response.setHeader("Access-Control-Allow-Origin", "*");
 
         String pathInfo = request.getPathInfo();
 

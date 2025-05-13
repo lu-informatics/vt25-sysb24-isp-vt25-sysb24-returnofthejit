@@ -40,8 +40,10 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
     }
 
     public void deleteRecipe(Recipe recipe) {
-        Recipe managed = em.merge(recipe);
-        em.remove(managed);
+        Recipe managed = em.find(Recipe.class, recipe.getRecipeID());
+        if (managed != null) {
+            em.remove(managed);
+        }
     }
     
     public String getNextRecipeNo() {
