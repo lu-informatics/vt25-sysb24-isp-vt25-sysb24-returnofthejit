@@ -13,5 +13,4 @@ public interface RecipeFacadeLocal {
     public void createRecipe(Recipe recipe, Map<Long, String> ingredientIdQuantityMap);
     public Recipe updateRecipe(Recipe recipe);
     public void removeRecipe(Recipe recipe);
-    void testLog();
 }

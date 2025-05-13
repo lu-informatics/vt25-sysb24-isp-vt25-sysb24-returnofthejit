@@ -19,10 +19,6 @@ public class Ingredient implements Serializable{
 	private String ingredientName;
 	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 	
-	public Ingredient(String ingredientNo, String ingredientName) {
-		this.ingredientNo = ingredientNo;
-		this.ingredientName = ingredientName; 
-	}
 	
 	@Id
 	@Column(name = "IngredientID")
