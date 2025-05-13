@@ -2,21 +2,23 @@ package se.ics.whatscookin.ejb;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
-@NamedQueries({
-    @NamedQuery(name = "Recipe.findAll", query = "SELECT r FROM Recipe r")
-})
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="Recipe")
@@ -28,10 +30,14 @@ public class Recipe implements Serializable{
 	private double time;
 	private String instructions;
 	private String description; 
-	private LocalDate date;
+	private LocalDateTime date;
+	
+	private AppUser user;
+	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 	
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "RecipeID")
 	public long getRecipeID() {
 	    return recipeID;
@@ -90,16 +96,14 @@ public class Recipe implements Serializable{
 	}
 
 	@Column(name = "CreatedAt")
-	public LocalDate getDate() {
+	public LocalDateTime getDate() {
 	    return date;
 	}
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDateTime date) {
 	    this.date = date;
 	}	
 	
-	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
-
-	@OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	public List<RecipeIngredient> getRecipeIngredients() {
 	    return recipeIngredients;
 	}
@@ -107,4 +111,22 @@ public class Recipe implements Serializable{
 	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
 	    this.recipeIngredients = recipeIngredients;
 	}
+	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "AppUserID", nullable = false)
+	public AppUser getUser() {
+		return user;
+	}
+
+	public void setUser(AppUser user) {
+		this.user = user;
+	}
+	
+	@Transient
+	public String getFormattedDate() {
+	    if (this.date == null) return "";
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+	    return this.date.format(formatter);
+	}
+
 }

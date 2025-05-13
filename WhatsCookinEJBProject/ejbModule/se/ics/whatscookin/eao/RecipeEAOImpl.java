@@ -28,7 +28,7 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
     }
 
     public List<Recipe> findAllRecipe() {
-        return em.createQuery("SELECT r FROM Recipe r", Recipe.class).getResultList();
+        return em.createQuery("SELECT r FROM Recipe r ORDER BY r.date DESC", Recipe.class).getResultList();
     }
 
     public void createRecipe(Recipe recipe) {
@@ -43,4 +43,20 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
         Recipe managed = em.merge(recipe); // Ensure it's managed
         em.remove(managed);
     }
+    
+    public String getNextRecipeNo() {
+        String jpql = "SELECT r.recipeNo FROM Recipe r ORDER BY r.recipeNo DESC";
+        List<String> result = em.createQuery(jpql, String.class)
+                                .setMaxResults(1)
+                                .getResultList();
+
+        if (result.isEmpty()) {
+            return "R001";
+        }
+
+        String last = result.get(0);  // e.g. "R027"
+        int nextNumber = Integer.parseInt(last.substring(1)) + 1;
+        return String.format("R%03d", nextNumber);  // pads with zeros to 3 digits
+    }
+
 }
