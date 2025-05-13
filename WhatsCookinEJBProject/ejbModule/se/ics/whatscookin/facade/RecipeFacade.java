@@ -40,6 +40,11 @@ public class RecipeFacade implements RecipeFacadeLocal {
     public List<Recipe> getAllRecipes() {
         return recipeEAO.findAllRecipe();
     }
+    
+    public void addRecipe(Recipe recipe) {
+    	recipeEAO.createRecipe(recipe);
+    }
+    
 
     public void createRecipe(Recipe recipe, Map<Long, String> ingredientIdQuantityMap) {
         // Assign hardcoded WebUser

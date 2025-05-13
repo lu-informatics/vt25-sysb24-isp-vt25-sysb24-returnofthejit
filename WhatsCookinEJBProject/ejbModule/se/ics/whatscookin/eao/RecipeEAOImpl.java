@@ -40,7 +40,7 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
     }
 
     public void deleteRecipe(Recipe recipe) {
-        Recipe managed = em.merge(recipe); // Ensure it's managed
+        Recipe managed = em.merge(recipe);
         em.remove(managed);
     }
     
