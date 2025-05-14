@@ -17,6 +17,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PostPersist;
+import jakarta.persistence.PostRemove;
+import jakarta.persistence.PostUpdate;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
@@ -34,7 +39,6 @@ public class Recipe implements Serializable{
 	
 	private AppUser user;
 	private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -128,5 +132,26 @@ public class Recipe implements Serializable{
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 	    return this.date.format(formatter);
 	}
+	
+	@PrePersist
+	public void beforeInsert() {
+	    System.out.println("[Callback] PrePersist: Förbereder att spara nytt recept ");
+	    System.out.println("Titel: " + title);
+	    System.out.println("Date: " + getFormattedDate());
+	}
+
+	@PostPersist
+	public void afterInsert() {
+	    System.out.println("[Callback] PostPersist: Receptet har nu sparats i databasen");
+	    System.out.println("Titel: " + title);
+	}
+	
+	@PostRemove
+	public void afterDelete() {
+	    System.out.println("[Callback] PostRemove: Receptet har tagits bort från databasen");
+	    System.out.println("Titel: " + title + ", ID: " + recipeID);
+	}
+
+	
 
 }
