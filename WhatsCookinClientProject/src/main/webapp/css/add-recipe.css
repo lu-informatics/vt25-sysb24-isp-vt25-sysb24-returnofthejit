@@ -1,10 +1,17 @@
 /* === Add Recipe Page Styles === */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .form-container {
   flex: 1;
   padding: 40px;
   background-color: #f9f9f9;
   font-family: 'Inter';
   border-color: #5f8772;
+  height: 88vh;
 }
 
 form label {

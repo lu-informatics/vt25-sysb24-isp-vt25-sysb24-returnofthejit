@@ -1,9 +1,16 @@
 /* === About Page Styles === */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* stretch to viewport if needed */
+}
+
 .about-content {
   flex: 1;
   padding: 40px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   box-sizing: border-box;
+  height: 88vh;
 }
 
 .about-content h1 {

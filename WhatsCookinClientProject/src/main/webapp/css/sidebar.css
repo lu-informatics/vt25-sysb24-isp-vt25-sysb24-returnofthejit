@@ -3,10 +3,6 @@
 	color: black;
 }
 
-.sidebar .sidebar-list span {
-    margin-left: 8px;
-}
-
 .sidebar .sidebar-list {
 	margin-bottom: 10px;
 	font-family: 'Inter';
@@ -31,7 +27,6 @@ i {
 
 .sidebar {
   width: 300px;
-  min-height: 100%;
   background: #fff;
   padding: 20px;
   font-family: 'Inter';
@@ -39,6 +34,7 @@ i {
   margin-bottom: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #sidebar-logo {
@@ -49,13 +45,6 @@ i {
   letter-spacing: 1px; 
   text-align: center;
   white-space: nowrap;
-}
-
-.layout {
-  display: flex;
-  align-items: flex-start;
-  height: 100vh;
-  width: 100vw;
 }
 
 .sidebar-list a {

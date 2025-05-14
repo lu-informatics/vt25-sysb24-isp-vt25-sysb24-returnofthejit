@@ -16,23 +16,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <div class="layout">
-    
-    <%-- Include the sidebar (header.jsp) --%>
-    <%@ include file="/fragments/sidebar.jsp" %>
-   
-
-    <!-- Main Content -->
-    <main class="home-content">
-      <h1 id="logo-home">What’s Cookin’</h1>
-      <p id="slogan">Recipes worth sharing!</p>
-      <img src="${pageContext.request.contextPath}/images/Home-page-hands-jpg.png" alt="Hands Image" class="hands-img" />
-    </main>
-    
+  <div class="page-container">
+	  <div class="layout">
+	    
+	    <%-- Include the sidebar (header.jsp) --%>
+	    <%@ include file="/fragments/sidebar.jsp" %>
+	
+	    <!-- Main Content -->
+	    <main class="home-content">
+	      <h1 id="logo-home">What’s Cookin’</h1>
+	      <p id="slogan">Recipes worth sharing!</p>
+	      <img src="${pageContext.request.contextPath}/images/Home-page-hands-jpg.png" alt="Hands Image" class="hands-img" />
+	    </main>
+	    
+	  </div>
+	  
+	  <%-- Include the footer (footer.jsp) --%>
+	  <%@ include file="/fragments/footer.jsp" %>
   </div>
-  
-  <%-- Include the footer (footer.jsp) --%>
-  <%@ include file="/fragments/footer.jsp" %>
-  
 </body>
 </html>
