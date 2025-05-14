@@ -69,3 +69,8 @@ footer {
     background-color: #f1f1f1;
     clear: both;
 }
+
+.hidden {
+    display: none;
+}
+
