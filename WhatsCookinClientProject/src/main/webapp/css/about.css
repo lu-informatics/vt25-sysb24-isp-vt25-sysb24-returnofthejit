@@ -3,6 +3,7 @@
   flex: 1;
   padding: 40px;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 .about-content h1 {

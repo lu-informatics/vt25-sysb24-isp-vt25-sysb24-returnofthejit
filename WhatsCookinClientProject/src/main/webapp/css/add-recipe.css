@@ -3,13 +3,8 @@
   flex: 1;
   padding: 40px;
   background-color: #f9f9f9;
-  font-family: 'Inter', sans-serif;
-}
-
-.form-container h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #2d4c3f;
+  font-family: 'Inter';
+  border-color: #5f8772;
 }
 
 form label {
@@ -19,47 +14,99 @@ form label {
   color: #2d4c3f;
 }
 
-input[type="text"],
-textarea {
+input[type="text"] {
   width: 100%;
   height: 50px;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle drop shadow */
-  font-size: 1rem;
+  color: #2d4c3f;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
+  font-family: 'Inter';
   color: #333;
   outline: none;
   transition: box-shadow 0.2s ease;
+  
 }
 
 input[type="text"]::placeholder,
 textarea::placeholder {
   color: #999;
+  font-family: 'Inter';
+  transition: box-shadow 0.2s ease;
+  border-color: #5f8772;
 }
 
+input[type="text"]:focus,
 input[type="number"]:focus,
-textarea:focus {
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-  border-color: #5f8772;
+textarea:focus,
+select:focus,
+.ts-wrapper.single.focus .ts-control {
+  border-color: #5f8772 !important;
+  box-shadow: 0 0 6px rgba(95, 135, 114, 0.3) !important;
+  outline: none !important;
+}
+
+.selected-ingredients-container {
+  display: flex;
+  gap: 10px; /* spacing between columns */
+  margin-top: 10px;
+  align-items: left;
+}
+
+ul#selected-quantities,
+ul#selected-ingredients {
+  list-style: none;
+  padding: 20px 0 0 20px;
+  border-radius: 6px;
+  background: transparent;
+  transition: background 0.3s ease;
+  flex: none; /* prevents resizing */
+}
+
+ul#selected-quantities {
+  width: 150px; 
+  text-align: left;
+}
+
+ul#selected-ingredients {
+  flex: 1;
+}
+
+ul#selected-ingredients.filled {
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  background-color: #f3f3f3;
+}
+
+ul#selected-quantities.filled {
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  background-color: #f3f3f3;
+}
+
+.selected-ingredients-container li {
+	font-family: 'Inter';
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.selected-ingredients-container li:hover {
+	background-color: inherit;
+	cursor: default;
 }
 
 textarea {
   height: 100px;
   resize: none;
-}
-
-#ingredient-select {
-  height: 50px;
-  min-width: 150px;
-  padding: 12px;
+  font-family: 'Inter' !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: normal;
   border-radius: 8px;
   border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  color: #333;
+  padding: 12px;
+  color: #2d4c3f;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
 }
 
 /* Style the quantity field */
@@ -70,7 +117,9 @@ textarea {
   border-radius: 8px;
   border: 1px solid #ccc;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+  border-color: #5f8772;
 }
 
 /* Style the button */
@@ -88,23 +137,15 @@ textarea {
 /* Force the Tom Select wrapper to fill space */
 .ingredient-select-wrapper {
   flex: 1;
-  min-width: 0;
+  min-width: 150px;
+}
+
+.ts-wrapper + select {
+	display: none;
 }
 
 .ingredient-select-wrapper .ts-wrapper {
   width: 100%;
-}
-
-.ingredient-select-wrapper .ts-control {
-  margin: 0;
-  width: 100%;
-  padding: 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  line-height: 1.2;
 }
 
 .ts-wrapper.single .ts-control {
@@ -115,11 +156,13 @@ textarea {
   border-radius: 8px;
   border: 1px solid #ccc !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   font-size: 1rem;
   color: #333;
   width: 100%;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .ts-wrapper.single.input-active .ts-control {
@@ -138,6 +181,11 @@ textarea {
 }
 
 .ts-control input {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
   margin: 0 !important;
   padding: 0 !important;
   line-height: normal !important;
@@ -148,7 +196,7 @@ textarea {
   border: 1px solid #ccc;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   flex: 1;
   min-width: 0;
 }
@@ -173,7 +221,6 @@ textarea {
     font-size: 1rem;
     color: #333;
     outline: none;
-    transition: box-shadow 0.2s ease;
 }
 
 .column {
@@ -186,12 +233,6 @@ textarea {
   display: flex;
   gap: 10px;
   align-items: center;
-}
-
-#selected-ingredients {
-  margin-top: 10px;
-  padding-left: 20px;
-  color: #333;
 }
 
 .submit-wrapper {
@@ -208,11 +249,9 @@ textarea {
   font-size: 1em;
   cursor: pointer;
   width: 200px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .add:hover {
   background-color: #4e735f;
 }
-
-
-

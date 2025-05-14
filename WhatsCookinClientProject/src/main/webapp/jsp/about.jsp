@@ -56,10 +56,12 @@
         <div class="founder-card">
           <img src="${pageContext.request.contextPath}/images/founder-to.jpg" alt="Founder 5" />
           <h3>Tobias Omming</h3>
-          <p>Sick Bastard</p>
+          <p>Senorita Awesome</p>
         </div>
       </div>
     </main>
   </div>
+  <%-- Include the footer --%>
+  <%@ include file="/fragments/footer.jsp" %>
 </body>
 </html>

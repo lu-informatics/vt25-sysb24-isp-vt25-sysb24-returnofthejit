@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add-recipe.css" />
 
-
-
 <!-- Fonts and Icons -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -69,8 +67,11 @@
         </div>
 
         <label>Selected Ingredients:</label>
-        <ul id="selected-ingredients"></ul>
-
+        <div class="selected-ingredients-container">
+	        <ul id="selected-quantities"></ul>
+	        <ul id="selected-ingredients"></ul>
+	    </div>
+        
         <!-- Hidden field to carry JSON string of selected ingredients -->
         <input type="hidden" name="ingredientsData" id="ingredients-data" />
 
@@ -80,47 +81,9 @@
       </form>
     </main>
   </div>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
-  <script>
-    new TomSelect('#ingredient-select', {
-      create: false,
-      sortField: {
-        field: "text",
-        direction: "asc"
-      }
-    });
-
-    const selectedIngredients = [];
-
-    function addIngredient() {
-      const select = document.getElementById('ingredient-select');
-      const quantityInput = document.getElementById('ingredient-quantity');
-      const ingredientId = select.value;
-      const ingredientName = select.options[select.selectedIndex].text;
-      const quantity = quantityInput.value;
-
-      if (!ingredientId || !quantity) {
-        alert("Please select an ingredient and provide a quantity.");
-        return;
-      }
-
-      // Add to list
-      selectedIngredients.push({ id: ingredientId, quantity: quantity });
-
-      // Display in UI
-      const li = document.createElement('li');
-      li.textContent = `${ingredientName} – ${quantity}`;
-      document.getElementById('selected-ingredients').appendChild(li);
-
-      // Update hidden input with JSON string
-      document.getElementById('ingredients-data').value = JSON.stringify(selectedIngredients);
-
-      // Reset
-      select.selectedIndex = 0;
-      quantityInput.value = '';
-    }
-  </script>
+  <!-- Load Tom Select first -->
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js" defer></script>
+  <!-- Then your custom script -->
+  <script src="${pageContext.request.contextPath}/js/add-recipe-script.js" defer></script>
 </body>
 </html>
