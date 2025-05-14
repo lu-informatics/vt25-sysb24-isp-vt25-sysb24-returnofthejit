@@ -41,7 +41,11 @@
               <i class="fas fa-utensils"></i><span> About What's Cookin'</span>
             </a>
           </li>
-        </ul>
+					<li><a
+						href="${pageContext.request.contextPath}/controller?action=weather">
+							<i class="fas fa-cloud-sun"></i><span> Cooking Weather</span>
+					</a>
+				</ul>
       </nav>
     </aside>
 
