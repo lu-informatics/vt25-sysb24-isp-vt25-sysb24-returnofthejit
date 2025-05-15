@@ -48,6 +48,10 @@ public class RecipeFacade implements RecipeFacadeLocal {
     	recipeEAO.createRecipe(recipe);
     }
     
+	public int nbrOfRecipesToday() {
+		return recipeEAO.nbrOfRecipesToday();
+	}
+    
 
     public void createRecipe(Recipe recipe, Map<Long, String> ingredientIdQuantityMap) {
         // Assign hardcoded WebUser

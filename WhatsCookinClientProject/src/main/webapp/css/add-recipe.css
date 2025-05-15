@@ -262,3 +262,15 @@ textarea {
 .add:hover {
   background-color: #4e735f;
 }
+
+.error-message {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.input-error {
+  border: 2px solid #c0392b !important;
+  box-shadow: none !important;
+}
