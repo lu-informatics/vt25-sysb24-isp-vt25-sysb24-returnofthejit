@@ -6,7 +6,7 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* stretch to viewport if needed */
+  min-height: 100vh;
 }
 	
 #logo-home {
@@ -34,4 +34,32 @@
 .layout {
 	display: flex;
 	flex: 1;
+}
+
+.stat-box {
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.stat-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === Weather Component Styles === */
+#weather {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+#weather p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #333;
 }

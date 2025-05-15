@@ -1,10 +1,13 @@
 package se.ics.whatscookin.eao;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import se.ics.whatscookin.ejb.Recipe;
 
 /**
@@ -25,6 +28,19 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
     
     public Recipe findRecipeById(long id) {
         return em.find(Recipe.class, id);
+    }
+    
+    public int nbrOfRecipesToday() {
+        LocalDate today = LocalDate.now();
+        LocalDateTime startOfDay = today.atStartOfDay();
+        LocalDateTime endOfDay = today.plusDays(1).atStartOfDay().minusNanos(1);
+
+        TypedQuery<Long> query = em.createQuery(
+            "SELECT COUNT(r) FROM Recipe r WHERE r.date BETWEEN :start AND :end", Long.class);
+        query.setParameter("start", startOfDay);
+        query.setParameter("end", endOfDay);
+
+        return query.getSingleResult().intValue();
     }
 
     public List<Recipe> findAllRecipe() {
