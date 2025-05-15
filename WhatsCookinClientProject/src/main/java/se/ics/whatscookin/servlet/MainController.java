@@ -60,11 +60,11 @@ public class MainController extends HttpServlet {
         } else if (action.equals("recipefeed")) {
         	List<Recipe> recipes = recipeFacade.getAllRecipes(); // Inject the facade
             request.setAttribute("recipes", recipes);
-            request.getRequestDispatcher("/jsp/recipefeed.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/recipe-feed.jsp").forward(request, response);
         } else if (action.equals("addrecipe")) {
         	List<?> ingredients = ingredientFacade.getAllIngredients();
 			request.setAttribute("ingredients", ingredients);
-            request.getRequestDispatcher("/jsp/addrecipe.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/add-recipe.jsp").forward(request, response);
         } else {
             // fallback/error page
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Page not found for action: " + action);

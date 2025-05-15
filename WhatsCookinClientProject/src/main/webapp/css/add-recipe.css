@@ -1,0 +1,264 @@
+/* === Add Recipe Page Styles === */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-container {
+  flex: 1;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Inter';
+  border-color: #5f8772;
+  height: 88vh;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #2d4c3f;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #2d4c3f;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
+  font-family: 'Inter';
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+  
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-family: 'Inter';
+  transition: box-shadow 0.2s ease;
+  border-color: #5f8772;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus,
+.ts-wrapper.single.focus .ts-control {
+  border-color: #5f8772 !important;
+  box-shadow: 0 0 6px rgba(95, 135, 114, 0.3) !important;
+  outline: none !important;
+}
+
+.selected-ingredients-container {
+  display: flex;
+  gap: 10px; /* spacing between columns */
+  margin-top: 10px;
+  align-items: left;
+}
+
+ul#selected-quantities,
+ul#selected-ingredients {
+  list-style: none;
+  padding: 20px 0 0 20px;
+  border-radius: 6px;
+  background: transparent;
+  transition: background 0.3s ease;
+  flex: none; /* prevents resizing */
+}
+
+ul#selected-quantities {
+  width: 150px; 
+  text-align: left;
+}
+
+ul#selected-ingredients {
+  flex: 1;
+}
+
+ul#selected-ingredients.filled {
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  background-color: #f3f3f3;
+}
+
+ul#selected-quantities.filled {
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  background-color: #f3f3f3;
+}
+
+.selected-ingredients-container li {
+	font-family: 'Inter';
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.selected-ingredients-container li:hover {
+	background-color: inherit;
+	cursor: default;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+  font-family: 'Inter' !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: normal;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  color: #2d4c3f;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
+}
+
+/* Style the quantity field */
+.quantity-input {
+  flex: 2;
+  height: 50px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+  border-color: #5f8772;
+}
+
+/* Style the button */
+.add-ingredient-btn {
+  padding: 12px 20px;
+  background-color: #5f8772;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Force the Tom Select wrapper to fill space */
+.ingredient-select-wrapper {
+  flex: 1;
+  min-width: 150px;
+}
+
+.ts-wrapper + select {
+	display: none;
+}
+
+.ingredient-select-wrapper .ts-wrapper {
+  width: 100%;
+}
+
+.ts-wrapper.single .ts-control {
+  display: flex;
+  padding: 0 12px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  font-family: 'Inter';
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-wrapper.single.input-active .ts-control {
+	flex-wrap: nowrap;
+	height: 50px;
+	align-items: center;
+}
+
+.ts-control {
+  display: flex !important;
+  align-items: center !important;
+  height: 50px !important;
+  padding: 0 12px !important;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.ts-control input {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
+}
+
+.ts-wrapper .ts-dropdown {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Inter';
+  flex: 1;
+  min-width: 0;
+}
+
+/* stops the cursor from blinking when an ingredient is chosen */
+.ts-wrapper.single.has-items .ts-control input {
+  display: none !important;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.timecost, input[type="number"] {
+	padding: 12px;
+	height: 50px;
+	border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle drop shadow */
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.submit-wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.add {
+  background-color: #5f8772;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 200px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.add:hover {
+  background-color: #4e735f;
+}
