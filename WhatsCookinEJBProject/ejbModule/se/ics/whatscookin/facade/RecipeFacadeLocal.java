@@ -14,4 +14,5 @@ public interface RecipeFacadeLocal {
     public Recipe updateRecipe(Recipe recipe);
     public void removeRecipe(Recipe recipe);
     public void addRecipe(Recipe recipe);
+    public int nbrOfRecipesToday();
 }

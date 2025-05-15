@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function isPositiveInteger(value) {
-    return /^\d+$/.test(value) && Number(value) >= 0;
+    return /^\d+$/.test(value) && Number(value) >= 1;
   }
 
   function validateForm() {

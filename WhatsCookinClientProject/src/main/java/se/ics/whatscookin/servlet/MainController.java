@@ -54,6 +54,8 @@ public class MainController extends HttpServlet {
 		String action = request.getParameter("action");
 
         if (action == null || action.equals("home")) {
+        	int nbrOfRecipesToday = recipeFacade.nbrOfRecipesToday();
+        	request.setAttribute("nbrOfRecipesToday", nbrOfRecipesToday);
             request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
         } else if (action.equals("about")) {
             request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
