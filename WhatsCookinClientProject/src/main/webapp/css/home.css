@@ -1,7 +1,12 @@
 /* === Home Page Styles === */
 .hands-img {
-  width: 100%;         /* full viewport width */
-  height: 100%;         /* scale proportionally */
+  width: 100%; 
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* stretch to viewport if needed */
 }
 	
 #logo-home {
@@ -24,4 +29,9 @@
 	margin: 0;
 	padding: 0px 0px 30px;
 	font-weight: 600;
+}
+
+.layout {
+	display: flex;
+	flex: 1;
 }

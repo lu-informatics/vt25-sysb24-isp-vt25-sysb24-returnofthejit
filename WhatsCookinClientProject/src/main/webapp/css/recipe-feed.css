@@ -1,5 +1,9 @@
-
 /* === Feed Page Styles === */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* stretch to viewport if needed */
+}
 
 #page-title {
   font-size: 3rem;
@@ -57,17 +61,25 @@ h4 {
   background-color: #4e735f;
 }
 
-.minhrparent {
+.mincostparent {
 	display: flex;
 	gap: 30px;
+	font-family: 'Inter' !important;
 }
 
-.minhr {
+.mincost {
 	display: flex;
 	gap: 10px;
 	white-space: nowrap;
 	font-size: 1.1rem;
 	color: #47484b;
+	font-family: 'Inter' !important;
+}
+
+.mincost span {
+  font-family: 'Inter' !important;
+  font-size: 1.1rem;
+  color: #47484b;
 }
 
 .feed {

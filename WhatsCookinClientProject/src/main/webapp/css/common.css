@@ -9,7 +9,6 @@ body , html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Segoe UI', 'Moo Lah Lah', 'Inter';
   background-color: #f9f9f9;
   border-bottom: none;
   margin-bottom: 0;
@@ -18,6 +17,6 @@ body , html {
 .layout {
   display: flex;
   align-items: flex-start;
-  min-height: 100vh;
   width: 100vw;
+  align-items: stretch;
 }
