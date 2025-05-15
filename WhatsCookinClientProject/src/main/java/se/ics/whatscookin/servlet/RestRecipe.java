@@ -161,7 +161,7 @@ public class RestRecipe extends HttpServlet {
         if (recipe != null) {
             JsonObjectBuilder obj = Json.createObjectBuilder();
             obj.add("id", recipe.getRecipeID());
-            //obj.add("no", recipe.getRecipeNo());
+            obj.add("no", recipe.getRecipeNo());
             obj.add("title", recipe.getTitle());
             obj.add("cost", String.valueOf(recipe.getCost())); 
             obj.add("time", String.valueOf(recipe.getTime()));
@@ -194,10 +194,12 @@ public class RestRecipe extends HttpServlet {
             }
         }
 
-        //recipe.setRecipeNo(jsonRoot.getString("no"));
         recipe.setTitle(jsonRoot.getString("title"));
-        recipe.setCost(Double.parseDouble(jsonRoot.getString("cost")));
-        recipe.setTime(Double.parseDouble(jsonRoot.getString("time")));
+        String costStr = jsonRoot.getString("cost", "").trim();
+        recipe.setCost(costStr.isEmpty() ? 0 : Double.parseDouble(costStr));
+
+        String timeStr = jsonRoot.getString("time", "").trim();
+        recipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
         recipe.setDescription(jsonRoot.getString("description"));
         recipe.setInstructions(jsonRoot.getString("instructions"));
 
