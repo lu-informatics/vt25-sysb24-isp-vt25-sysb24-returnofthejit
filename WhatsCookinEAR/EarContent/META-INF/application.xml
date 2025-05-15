@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/application_10.xsd" id="Application_ID" version="10">
-  <display-name>WhatsCookinEAR</display-name>
-  <module>
-    <web>
-      <web-uri>WhatsCookinClientProject.war</web-uri>
-      <context-root>WhatsCookin</context-root>
-    </web>
-  </module>
-  <module>
-    <ejb>WhatsCookinEJBProject.jar</ejb>
-  </module>
+<application id="Application_ID" version="10"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/application_10.xsd">
+
+    <display-name>WhatsCookinEAR</display-name>
+
+    <module>
+        <web>
+            <web-uri>WhatsCookinClientProject.war</web-uri>
+            <context-root>WhatsCookinClientProject</context-root>
+        </web>
+    </module>
+    
+    <module>
+        <ejb>WhatsCookinEJBProject.jar</ejb>
+    </module>
+
 </application>

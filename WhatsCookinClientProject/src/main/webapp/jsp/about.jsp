@@ -7,7 +7,8 @@
   <title>About Us – What's Cookin'</title>
 
   <!-- Local stylesheet -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/about.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -17,48 +18,52 @@
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
 </head>
 <body>
-	<div class="layout">
-
-	<%-- Include the sidebar --%>
-    <%@ include file="/fragments/sidebar.jsp" %>
-    
-    <!-- Main content -->
-    <main class="about-content">
-      <h1>About What's Cookin'</h1>
-      <p class="description">
-        We’re a food-loving team of students who built What's Cookin' to make sharing meals and recipes easier, more fun, and more social.
-        Whether you're a kitchen pro or just starting out, our app helps you connect with friends and share what you’re cookin’.
-      </p>
-
-      <h2>Our Founders</h2>
-      <div class="founders-grid">
-        <div class="founder-card">
-          <img src="${pageContext.request.contextPath}/images/founder-ah.jpg" alt="Founder 1" />
-          <h3>Amelie Hörnfeldt</h3>
-          <p>Backend Developer</p>
-        </div>
-        <div class="founder-card">
-          <img src="${pageContext.request.contextPath}/images/founder-hg.jpg" alt="Founder 2" />
-          <h3>Hugo Gunnarson</h3>
-          <p>Backend Developer</p>
-        </div>
-        <div class="founder-card">
-          <img src="${pageContext.request.contextPath}/images/founder-ps.jpg" alt="Founder 3" />
-          <h3>Peggy Schnitzer</h3>
-          <p>Frontend Developer</p>
-        </div>
-        <div class="founder-card">
-          <img src="${pageContext.request.contextPath}/images/founder-if.jpg" alt="Founder 4" />
-          <h3>Isak Frankfeldt</h3>
-          <p>All-round/Mood manager</p>
-        </div>
-        <div class="founder-card">
-          <img src="${pageContext.request.contextPath}/images/founder-to.jpg" alt="Founder 5" />
-          <h3>Tobias Omming</h3>
-          <p>Sick Bastard</p>
-        </div>
-      </div>
-    </main>
+  <div class="page-container">
+	  <div class="layout">
+	
+		<%-- Include the sidebar --%>
+	    <%@ include file="/fragments/sidebar.jsp" %>
+	    
+	    <!-- Main content -->
+	    <main class="about-content">
+	      <h1>About What's Cookin'</h1>
+	      <p class="description">
+	        We’re a food-loving team of students who built What's Cookin' to make sharing meals and recipes easier, more fun, and more social.
+	        Whether you're a kitchen pro or just starting out, our app helps you connect with friends and share what you’re cookin’.
+	      </p>
+	
+	      <h2>Our Founders</h2>
+	      <div class="founders-grid">
+	        <div class="founder-card">
+	          <img src="${pageContext.request.contextPath}/images/founder-ah.jpg" alt="Founder 1" />
+	          <h3>Amelie Hörnfeldt</h3>
+	          <p>Backend Developer</p>
+	        </div>
+	        <div class="founder-card">
+	          <img src="${pageContext.request.contextPath}/images/founder-hg.jpg" alt="Founder 2" />
+	          <h3>Hugo Gunnarson</h3>
+	          <p>Backend Developer</p>
+	        </div>
+	        <div class="founder-card">
+	          <img src="${pageContext.request.contextPath}/images/founder-ps.jpg" alt="Founder 3" />
+	          <h3>Peggy Schnitzer</h3>
+	          <p>Frontend Developer</p>
+	        </div>
+	        <div class="founder-card">
+	          <img src="${pageContext.request.contextPath}/images/founder-if.jpg" alt="Founder 4" />
+	          <h3>Isak Frankfeldt</h3>
+	          <p>All-round/Mood manager</p>
+	        </div>
+	        <div class="founder-card">
+	          <img src="${pageContext.request.contextPath}/images/founder-to.jpg" alt="Founder 5" />
+	          <h3>Tobias Omming</h3>
+	          <p>Senorita Awesome</p>
+	        </div>
+	      </div>
+	    </main>
+	  </div>
+	  <%-- Include the footer --%>
+	  <%@ include file="/fragments/footer.jsp" %>
   </div>
 </body>
 </html>

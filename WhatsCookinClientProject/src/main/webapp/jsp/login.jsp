@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What's Cookin'</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" />
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Whatâ€™s Cookinâ€™</h1>
+    <h1>What'€™s Cookin'</h1>
     <div class="form-box">
       <h2>Create an account</h2>
       <p>Enter a username and password</p>
