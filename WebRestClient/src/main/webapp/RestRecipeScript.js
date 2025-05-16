@@ -22,27 +22,31 @@ $(document).ready(function() {
 		$('#newFields').removeClass('hidden');
 	});
 
-	$('#AddBtn').click(function() {
+	$('#AddBtn').click(function () {
 		let recipe = {
-			title: $('#title').val(),
-			cost: $('#cost').val(),
-			time: $('#time').val(),
-			instructions: $('#instructions').val(),
-			description: $('#description').val()
+			title: $('#new_title').val(),
+			cost: $('#new_cost').val(),
+			time: $('#new_time').val(),
+			instructions: $('#new_instructions').val(),
+			description: $('#new_description').val()
 		};
+
+		console.log("Sending new recipe:", recipe); // Debug check
+
 		$.ajax({
 			url: `${BASE_URL}`,
 			method: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify(recipe),
-			success: () => {
+			success: (createdRecipe) => {
 				clearForm();
-				alert('Recipe added successfully! ID: ${createdRecipe.id}');
+				alert(`Recipe added successfully! ID: ${createdRecipe.id}`);
 				resetView();
 			},
 			error: () => alert('Could not add recipe')
 		});
 	});
+
 
 	$('#UpdateBtn').click(function() {
 		let id = $('#recipeID').val();
@@ -118,7 +122,14 @@ function clearForm() {
 	$('#time').val('');
 	$('#instructions').val('');
 	$('#description').val('');
+
+	$('#new_title').val('');
+	$('#new_cost').val('');
+	$('#new_time').val('');
+	$('#new_instructions').val('');
+	$('#new_description').val('');
 }
+
 
 function showEditFields() {
 	$('#editFields').removeClass('hidden');
