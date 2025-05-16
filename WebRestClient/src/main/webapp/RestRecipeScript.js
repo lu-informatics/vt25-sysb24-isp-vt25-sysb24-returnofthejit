@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/WhatsCookin/Recipes';
+const BASE_URL = 'http://localhost:8080/WhatsCookinClientProject/Recipes';
 
 $(document).ready(function () {
     $('#FindBtn').click(function () {

@@ -27,6 +27,22 @@
 	      <h1 id="title-home">What’s Cookin’</h1>
 	      <p id="slogan">Recipes worth sharing!</p>
 	      <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
+	      
+	      <div class="stat-box">
+	        <h2>Aktivitet idag</h2>
+	        <p><strong>${nbrOfRecipesToday}</strong> recept har skapats idag.</p>
+	      </div>
+
+	      <!-- Weather Section -->
+	      <section id="weather">
+	          <h2>What's the cookin weather today?</h2>
+	        <p><strong>City:</strong> <span id="city">Loading...</span></p>
+	        <p><strong>Temperature:</strong> <span id="degree"></span> °C</p>
+	        <p><strong>Weather:</strong> <span id="weatherType"></span></p>
+	        <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
+	        <p><strong>Sunset:</strong> <span id="sunset"></span></p>
+	      </section>
+	      
 	    </main>
 	    
 	  </div>
@@ -34,5 +50,8 @@
 	  <%-- Include the footer (footer.jsp) --%>
 	  <%@ include file="/fragments/footer.jsp" %>
   </div>
+
+  <!-- Weather Script -->
+  <script src="${pageContext.request.contextPath}/js/home-weatherscript.js" defer></script>
 </body>
 </html>
