@@ -24,9 +24,6 @@
 	  <%@ include file="/fragments/header.jsp" %>
 	  
 	  <div class="layout">
-	
-		<%-- Include the sidebar --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
 	    
 	    <!-- Main content -->
 	    <main class="about-content">

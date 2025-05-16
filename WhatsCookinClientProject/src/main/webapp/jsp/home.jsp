@@ -13,7 +13,11 @@
   <!-- Externa resurser (Font Awesome + Google Fonts) -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  
+   
 </head>
 <body>
   <div class="page-container">
@@ -24,9 +28,21 @@
 	
 	    <!-- Main Content -->
 	    <main class="home-content">
-	      <h1 id="title-home">What’s Cookin’</h1>
+	      <h1 id="title-home">SHARING IS CARING</h1>
+	      <div class="image-wrapper">
+	        <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
+	      </div>
+	      <section class="split-section">
+			  <div class="left-column">
+			    <h2>WHAT'S COOKIN'<br>GOOD LOOKIN'</h2>
+			  </div>
+			  <div class="right-column">
+			    <p>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, justo sit amet suscipit volutpat, neque sem luctus nisi, in feugiat nisi justo ac orci.
+			    </p>
+			  </div>
+			</section>
 	      <p id="slogan">Recipes worth sharing!</p>
-	      <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
 	      
 	      <div class="stat-box">
 	        <h2>Aktivitet idag</h2>

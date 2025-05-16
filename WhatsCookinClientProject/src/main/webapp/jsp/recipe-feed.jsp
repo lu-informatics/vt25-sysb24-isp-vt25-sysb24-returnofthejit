@@ -25,9 +25,6 @@
 	  
 	  <div class="layout">
 	
-	    <%-- Include the sidebar --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
-	
 	    <main class="feed">
 	      <h3 id="page-title">Recipe Feed</h3>
 	      <p id="discover">Discover new recipes!</p>

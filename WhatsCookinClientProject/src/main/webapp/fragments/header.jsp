@@ -9,7 +9,9 @@
 <div style="width: 100%;">
  <header class="site-header">
   <div class="header-container">
-    <div class="logo">What's Cookin'</div>
+    <div class="logo">
+      <a href="${pageContext.request.contextPath}/controller?action=home">What's Cookin'</a>
+    </div>
     <nav class="nav-links">
       <a href="${pageContext.request.contextPath}/controller?action=home">Home</a>
       <a href="${pageContext.request.contextPath}/controller?action=recipefeed">Recipes</a>

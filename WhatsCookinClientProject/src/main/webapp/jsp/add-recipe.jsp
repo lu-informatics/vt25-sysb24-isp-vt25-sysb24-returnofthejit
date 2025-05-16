@@ -26,9 +26,6 @@
 	  
 	  <div class="layout">
 	
-	    <%-- Include the sidebar --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
-	
 	    <main class="form-container">
 	      <h2>Add Recipe</h2>
 	      <form id="recipe-form" method="post" action="${pageContext.request.contextPath}/controller?action=saverecipe">
