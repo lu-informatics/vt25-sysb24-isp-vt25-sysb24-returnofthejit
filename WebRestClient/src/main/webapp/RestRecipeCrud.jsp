@@ -1,79 +1,64 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Recipe CRUD</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="RestRecipe.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="RestRecipe.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="RestRecipeScript.js"></script>
 </head>
 <body>
-	<header>
-		<p>Recipe REST Client</p>
-	</header>
-	<section id="row">
-		<nav>
-			<ul>
-				<li class="active"><a href="#">CRUD</a></li>
-				<li><a href="#">About</a></li>
-			</ul>
-		</nav>
-		<section id="main">
-			<section id="content">
-				<article>
-					<fieldset id="RecipeFS">
-						<legend>Recipe</legend>
+    <header>
+        <h1>Recipe REST Client</h1>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Recipe Manager</h2>
+            <div class="form-group">
+                <label for="recipeID">Recipe ID</label>
+                <input type="text" id="recipeID">
+                <button id="FindBtn">Find</button>
+                <button id="NewRecipeBtn">New Recipe</button>
+            </div>
 
-						<!-- ID + Find visible always -->
-						ID:<br> <input type="text" id="recipeID"><br> <input
-							type="button" value="Find" id="FindBtn"><br>
-						<br>
+            <div id="updateFields" class="hidden">
+                <h3>Update Recipe</h3>
+                <label>Recipe No</label>
+                <input type="text" id="recipeNo" readonly>
+                <label>Title</label>
+                <input type="text" id="title">
+                <label>Cost</label>
+                <input type="text" id="cost">
+                <label>Time</label>
+                <input type="text" id="time">
+                <label>Instructions</label>
+                <textarea id="instructions"></textarea>
+                <label>Description</label>
+                <textarea id="description"></textarea>
+                <button id="UpdateBtn">Update</button>
+                <button id="DeleteBtn" class="danger">Delete</button>
+            </div>
 
-						<!-- Knapp för nytt recept -->
-						<input type="button" value="New Recipe" id="NewRecipeBtn"><br>
-						<br>
-
-						<!-- Fält för uppdatering (visas efter Find) -->
-						<div id="updateFields" class="hidden">
-							<!-- Recipe No endast visas, ej redigerbar -->
-							Recipe No:<br> <input type="text" id="recipeNo" readonly><br>
-							Title:<br> <input type="text" id="title"><br>
-							Cost:<br> <input type="text" id="cost"><br>
-							Time:<br> <input type="text" id="time"><br>
-							Instructions:<br>
-							<textarea id="instructions"></textarea>
-							<br> Description:<br>
-							<textarea id="description"></textarea>
-							<br>
-							<br> <input type="button" value="Update" id="UpdateBtn">
-							<input type="button" value="Delete" id="DeleteBtn">
-						</div>
-
-						<!-- Fält för nytt recept (visas efter New Recipe) -->
-						<div id="newFields" class="hidden">
-							Title:<br> <input type="text" id="new_title"><br>
-							Cost:<br> <input type="text" id="new_cost"><br>
-							Time:<br> <input type="text" id="new_time"><br>
-							Instructions:<br>
-							<textarea id="new_instructions"></textarea>
-							<br> Description:<br>
-							<textarea id="new_description"></textarea>
-							<br>
-							<br> <input type="button" value="Add" id="AddBtn">
-						</div>
-					</fieldset>
-
-
-				</article>
-			</section>
-		</section>
-	</section>
-	<footer>
-		<p>&copy; Recipe Client - Informatik</p>
-	</footer>
+            <div id="newFields" class="hidden">
+                <h3>New Recipe</h3>
+                <label>Title</label>
+                <input type="text" id="new_title">
+                <label>Cost</label>
+                <input type="text" id="new_cost">
+                <label>Time</label>
+                <input type="text" id="new_time">
+                <label>Instructions</label>
+                <textarea id="new_instructions"></textarea>
+                <label>Description</label>
+                <textarea id="new_description"></textarea>
+                <button id="AddBtn">Add</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Recipe Client - Informatik</p>
+    </footer>
 </body>
 </html>
