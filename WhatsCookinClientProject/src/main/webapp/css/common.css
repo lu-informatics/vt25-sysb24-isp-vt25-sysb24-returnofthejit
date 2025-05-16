@@ -12,11 +12,11 @@ body , html {
   background-color: #f9f9f9;
   border-bottom: none;
   margin-bottom: 0;
+  overflow-x: hidden;
 }
 
 .layout {
   display: flex;
   align-items: flex-start;
-  width: 100vw;
   align-items: stretch;
 }

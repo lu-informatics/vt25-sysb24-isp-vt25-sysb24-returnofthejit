@@ -13,26 +13,45 @@
   <!-- Externa resurser (Font Awesome + Google Fonts) -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  
+   
 </head>
 <body>
   <div class="page-container">
+      <%-- Include the header (header.jsp) --%>
+	  <%@ include file="/fragments/header.jsp" %>
+	  
 	  <div class="layout">
-	    
-	    <%-- Include the sidebar (header.jsp) --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
 	
 	    <!-- Main Content -->
 	    <main class="home-content">
-	      <h1 id="logo-home">What’s Cookin’</h1>
-	      <p id="slogan">Recipes worth sharing!</p>
+	      <h1 id="title-home">SHARING IS CARING</h1>
+	      <div class="image-wrapper">
+	        <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
+	      </div>
+	      <section class="split-section">
+			  <div class="left-column">
+			    <h2>WHAT'S COOKIN'<br>GOOD LOOKIN'</h2>
+			  </div>
+			  <div class="right-column">
+			    <p>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, justo sit amet suscipit volutpat, neque sem luctus nisi, in feugiat nisi justo ac orci.
+			    </p>
+			  </div>
+			</section>
+	      <div class="wavy-banner">
+			  <img src="${pageContext.request.contextPath}/svg/wave-banner.svg" alt="Wavy banner" />
+		  </div>
+
+		  <p id="slogan">Recipes worth sharing!</p>
 	      
 	      <div class="stat-box">
 	        <h2>Aktivitet idag</h2>
 	        <p><strong>${nbrOfRecipesToday}</strong> recept har skapats idag.</p>
 	      </div>
-
-	      <img src="${pageContext.request.contextPath}/images/Home-page-hands-jpg.png" alt="Hands Image" class="hands-img" />
 
 	      <!-- Weather Section -->
 	      <section id="weather">
@@ -43,6 +62,7 @@
 	        <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
 	        <p><strong>Sunset:</strong> <span id="sunset"></span></p>
 	      </section>
+	      
 	    </main>
 	    
 	  </div>

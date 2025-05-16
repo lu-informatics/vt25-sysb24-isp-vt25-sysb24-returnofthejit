@@ -20,10 +20,11 @@
 </head>
 <body>
   <div class="page-container">
+	  
+	  <%-- Include the header (header.jsp) --%>
+	  <%@ include file="/fragments/header.jsp" %>
+	  
 	  <div class="layout">
-	
-	    <%-- Include the sidebar --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
 	
 	    <main class="form-container">
 	      <h2>Add Recipe</h2>

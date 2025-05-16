@@ -12,6 +12,7 @@
   font-family: 'Inter';
   border-color: #5f8772;
   height: 88vh;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15); /* subtle shadow below */
 }
 
 form label {
@@ -248,7 +249,7 @@ textarea {
 }
 
 .add {
-  background-color: #5f8772;
+  background-color: #a0b497;
   color: white;
   border: none;
   border-radius: 6px;
