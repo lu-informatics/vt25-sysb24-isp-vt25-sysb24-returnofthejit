@@ -42,7 +42,11 @@
 			    </p>
 			  </div>
 			</section>
-	      <p id="slogan">Recipes worth sharing!</p>
+	      <div class="wavy-banner">
+			  <img src="${pageContext.request.contextPath}/svg/wave-banner.svg" alt="Wavy banner" />
+		  </div>
+
+		  <p id="slogan">Recipes worth sharing!</p>
 	      
 	      <div class="stat-box">
 	        <h2>Aktivitet idag</h2>
