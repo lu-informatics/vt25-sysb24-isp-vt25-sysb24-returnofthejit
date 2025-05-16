@@ -67,7 +67,21 @@ public class MainController extends HttpServlet {
         	List<?> ingredients = ingredientFacade.getAllIngredients();
 			request.setAttribute("ingredients", ingredients);
             request.getRequestDispatcher("/jsp/add-recipe.jsp").forward(request, response);
-        } else {
+        } else if (action.equals("recipedetails")) {
+            String idParam = request.getParameter("id");
+            if (idParam != null) {
+                try {
+                    long id = Long.parseLong(idParam);
+                    Recipe recipe = recipeFacade.getRecipeById(id);
+                    request.setAttribute("recipe", recipe);
+                    request.getRequestDispatcher("/jsp/recipe-details.jsp").forward(request, response);
+                } catch (NumberFormatException e) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid recipe ID");
+                }
+            } else {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing recipe ID");
+            }
+        }else {
             // fallback/error page
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Page not found for action: " + action);
         }

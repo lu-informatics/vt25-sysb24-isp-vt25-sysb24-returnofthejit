@@ -34,7 +34,9 @@
 	            <h4>${recipe.title}</h4>
 	            <p class="user">${recipe.user.username} • ${recipe.formattedDate}</p>
 	            <p class="description">${recipe.description}</p>
-	            <button class="gtr">Go to recipe →</button>
+	            <a class="gtr" href="${pageContext.request.contextPath}/controller?action=recipedetails&id=${recipe.recipeID}">
+				  <button class="gtr">Go to recipe →</button>
+				</a>
 	            <div class="mincostparent">
 	              <div class="mincost">
 	                <i class="fas fa-clock"></i><span> ${recipe.time} min</span>
