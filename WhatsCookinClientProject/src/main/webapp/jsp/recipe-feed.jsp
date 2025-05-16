@@ -19,6 +19,10 @@
 </head>
 <body>
    <div class="page-container">
+	  
+	  <%-- Include the header (header.jsp) --%>
+	  <%@ include file="/fragments/header.jsp" %>
+	  
 	  <div class="layout">
 	
 	    <%-- Include the sidebar --%>

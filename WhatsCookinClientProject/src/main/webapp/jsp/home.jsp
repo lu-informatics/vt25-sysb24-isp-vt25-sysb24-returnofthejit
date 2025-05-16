@@ -17,16 +17,16 @@
 </head>
 <body>
   <div class="page-container">
+      <%-- Include the header (header.jsp) --%>
+	  <%@ include file="/fragments/header.jsp" %>
+	  
 	  <div class="layout">
-	    
-	    <%-- Include the sidebar (header.jsp) --%>
-	    <%@ include file="/fragments/sidebar.jsp" %>
 	
 	    <!-- Main Content -->
 	    <main class="home-content">
-	      <h1 id="logo-home">What’s Cookin’</h1>
+	      <h1 id="title-home">What’s Cookin’</h1>
 	      <p id="slogan">Recipes worth sharing!</p>
-	      <img src="${pageContext.request.contextPath}/images/Home-page-hands-jpg.png" alt="Hands Image" class="hands-img" />
+	      <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
 	    </main>
 	    
 	  </div>
