@@ -37,14 +37,14 @@
                   <h4>${recipe.title}</h4>
                   <p class="user">${recipe.user.username} • ${recipe.formattedDate}</p>
                   <p class="description">${recipe.description}</p>
-                </div>
-
-                <!-- Back -->
-                <div class="recipe-card-back">
                   <div class="recipe-meta">
                     <div><i class="fas fa-clock"></i>${recipe.time} min</div>
                     <div><i class="fas fa-sack-dollar"></i>${recipe.cost} kr</div>
                   </div>
+                </div>
+
+                <!-- Back -->
+                <div class="recipe-card-back">
                   <a href="${pageContext.request.contextPath}/controller?action=recipedetails&id=${recipe.recipeID}">
                     <button class="view-button">View Recipe</button>
                   </a>
