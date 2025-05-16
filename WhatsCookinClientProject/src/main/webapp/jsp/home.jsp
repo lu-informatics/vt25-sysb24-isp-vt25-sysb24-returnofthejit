@@ -45,12 +45,10 @@
 	      <div class="wavy-banner">
 			  <img src="${pageContext.request.contextPath}/svg/wave-banner.svg" alt="Wavy banner" />
 		  </div>
-
-		  <p id="slogan">Recipes worth sharing!</p>
 	      
 	      <div class="stat-box">
-	        <h2>Aktivitet idag</h2>
-	        <p><strong>${nbrOfRecipesToday}</strong> recept har skapats idag.</p>
+	        <h2>Activity today</h2>
+	        <p><strong>${nbrOfRecipesToday}</strong> recipes have been made today.</p>
 	      </div>
 
 	      <!-- Weather Section -->
