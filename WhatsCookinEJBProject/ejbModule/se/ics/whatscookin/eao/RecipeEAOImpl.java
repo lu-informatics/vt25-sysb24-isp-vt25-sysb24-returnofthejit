@@ -48,6 +48,8 @@ public class RecipeEAOImpl implements RecipeEAOLocal {
     }
 
     public void createRecipe(Recipe recipe) {
+    	recipe.setRecipeNo(getNextRecipeNo());
+    	recipe.setDate(LocalDateTime.now());
         em.persist(recipe);
     }
 

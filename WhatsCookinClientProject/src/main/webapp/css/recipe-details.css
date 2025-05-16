@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-container {
+  flex: 1;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Inter';
+  border-color: #5f8772;
+}
+
+h2 {
+  color: #2d4c3f;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #2d4c3f;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #2d4c3f;
+  font-size: 1rem;
+  font-family: 'Inter';
+  resize: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+textarea {
+  height: 100px;
+}
+
+.selected-ingredients-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+ul#selected-quantities,
+ul#selected-ingredients {
+  list-style: none;
+  padding: 0 0 0 20px;
+  background: #f3f3f3;
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+}
+
+li {
+  margin-bottom: 12px;
+  font-family: 'Inter';
+  color: #333;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

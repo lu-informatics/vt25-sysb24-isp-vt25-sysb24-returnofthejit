@@ -112,7 +112,7 @@ public class RestRecipe extends HttpServlet {
         }
 
         BufferedReader reader = request.getReader();
-        Recipe recipe = parseJsonRecipe(reader);
+        Recipe recipe = parseJsonupdateRecipe(reader);
         try {
             recipe = recipeFacade.updateRecipe(recipe);
         } catch (Exception e) {
@@ -177,6 +177,40 @@ public class RestRecipe extends HttpServlet {
         out.flush();
     }
 
+    private Recipe parseJsonupdateRecipe(BufferedReader br) {
+        JsonReader jsonReader = Json.createReader(br);
+        JsonObject jsonRoot = jsonReader.readObject();
+
+        Recipe recipe = new Recipe();
+
+        // Parse and set Recipe ID if it exists
+        if (jsonRoot.containsKey("id")) {
+            try {
+                String idStr = jsonRoot.get("id").toString().replaceAll("\"", "");
+                long id = Long.parseLong(idStr);
+                recipe.setRecipeID(id);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid recipe ID format in JSON");
+            }
+        }
+        
+        recipe.setRecipeNo(jsonRoot.getString("no"));
+        recipe.setTitle(jsonRoot.getString("title"));
+        String costStr = jsonRoot.getString("cost", "").trim();
+        recipe.setCost(costStr.isEmpty() ? 0 : Double.parseDouble(costStr));
+
+        String timeStr = jsonRoot.getString("time", "").trim();
+        recipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
+        recipe.setDescription(jsonRoot.getString("description"));
+        recipe.setInstructions(jsonRoot.getString("instructions"));
+
+        // Set a fixed AppUser to avoid DB error on update
+        AppUser webUser = appUserFacade.getUserById(14L);
+        recipe.setUser(webUser);
+
+        return recipe;
+    }
+    
     private Recipe parseJsonRecipe(BufferedReader br) {
         JsonReader jsonReader = Json.createReader(br);
         JsonObject jsonRoot = jsonReader.readObject();
@@ -193,11 +227,13 @@ public class RestRecipe extends HttpServlet {
                 System.out.println("Invalid recipe ID format in JSON");
             }
         }
-
-        recipe.setRecipeNo(jsonRoot.getString("no"));
+        
         recipe.setTitle(jsonRoot.getString("title"));
-        recipe.setCost(Double.parseDouble(jsonRoot.getString("cost")));
-        recipe.setTime(Double.parseDouble(jsonRoot.getString("time")));
+        String costStr = jsonRoot.getString("cost", "").trim();
+        recipe.setCost(costStr.isEmpty() ? 0 : Double.parseDouble(costStr));
+
+        String timeStr = jsonRoot.getString("time", "").trim();
+        recipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
         recipe.setDescription(jsonRoot.getString("description"));
         recipe.setInstructions(jsonRoot.getString("instructions"));
 

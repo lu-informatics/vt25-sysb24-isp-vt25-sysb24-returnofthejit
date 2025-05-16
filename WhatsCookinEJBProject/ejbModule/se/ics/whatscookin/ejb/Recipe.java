@@ -107,7 +107,7 @@ public class Recipe implements Serializable{
 	    this.date = date;
 	}	
 	
-	@OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	public List<RecipeIngredient> getRecipeIngredients() {
 	    return recipeIngredients;
 	}
