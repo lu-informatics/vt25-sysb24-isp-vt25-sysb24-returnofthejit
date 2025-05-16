@@ -2,52 +2,66 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Recipe Details</title>
+  <title>Recipe Receipt</title>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/recipe-details.css" />
 </head>
 <body>
+
+  <%@ include file="/fragments/header-recipe-details.jsp" %>
+
   <div class="page-container">
     <div class="form-container">
       <h2>${recipe.title}</h2>
-      <p><strong>By:</strong> ${recipe.user.username}</p>
-      <p><strong>Date:</strong> ${recipe.formattedDate}</p>
+
+      <div class="meta-info">
+        <p><strong>By:</strong> ${recipe.user.username}</p>
+        <p><strong>Date:</strong> ${recipe.formattedDate}</p>
+      </div>
 
       <div class="row">
-        <div class="column">
+        <div class="column data-block">
           <label>Time</label>
-          <input type="text" readonly value="${recipe.time} min">
+          <div class="value">${recipe.time} min</div>
         </div>
-        <div class="column">
+        <div class="column data-block">
           <label>Cost</label>
-          <input type="text" readonly value="${recipe.cost} kr">
+          <div class="value">${recipe.cost} kr</div>
         </div>
       </div>
 
-      <label>Description</label>
-      <textarea readonly>${recipe.description}</textarea>
+      <div class="data-block">
+        <label>Description</label>
+        <div class="value">${recipe.description}</div>
+      </div>
 
-      <label>Instructions</label>
-      <textarea readonly>${recipe.instructions}</textarea>
+      <div class="data-block">
+        <label>Instructions</label>
+        <div class="value">${recipe.instructions}</div>
+      </div>
 
-      <label>Ingredients</label>
-      <div class="selected-ingredients-container">
-        <ul id="selected-quantities" class="filled">
-          <c:forEach var="ri" items="${recipe.recipeIngredients}">
-            <li>${ri.quantity}</li>
-          </c:forEach>
-        </ul>
-        <ul id="selected-ingredients" class="filled">
-          <c:forEach var="ri" items="${recipe.recipeIngredients}">
-            <li>${ri.ingredient.ingredientName}</li>
-          </c:forEach>
-        </ul>
+      <div class="data-block">
+        <label>Ingredients</label>
+        <div class="selected-ingredients-container">
+          <ul id="selected-quantities">
+            <c:forEach var="ri" items="${recipe.recipeIngredients}">
+              <li>${ri.quantity}</li>
+            </c:forEach>
+          </ul>
+          <ul id="selected-ingredients">
+            <c:forEach var="ri" items="${recipe.recipeIngredients}">
+              <li>${ri.ingredient.ingredientName}</li>
+            </c:forEach>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+  <%@ include file="/fragments/footer.jsp" %>
+
 </body>
 </html>
