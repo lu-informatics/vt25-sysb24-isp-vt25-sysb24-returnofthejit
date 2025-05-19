@@ -112,13 +112,37 @@ public class RestRecipe extends HttpServlet {
         }
 
         BufferedReader reader = request.getReader();
-        Recipe recipe = parseJsonupdateRecipe(reader);
-        try {
-            recipe = recipeFacade.updateRecipe(recipe);
-        } catch (Exception e) {
-            System.out.println("facade Update Error");
+        JsonReader jsonReader = Json.createReader(reader);
+        JsonObject jsonRoot = jsonReader.readObject();
+
+        long id = Long.parseLong(pathInfo.split("/")[1]);
+        Recipe existingRecipe = recipeFacade.getRecipeById(id);
+        if (existingRecipe == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "Recipe not found");
+            return;
         }
-        sendAsJson(response, recipe);
+
+        // Preserve the original date
+        var originalDate = existingRecipe.getDate(); 
+
+        // Update mutable fields
+        existingRecipe.setRecipeNo(jsonRoot.getString("no"));
+        existingRecipe.setTitle(jsonRoot.getString("title"));
+        String costStr = jsonRoot.getString("cost", "").trim();
+        existingRecipe.setCost(costStr.isEmpty() ? 0 : Double.parseDouble(costStr));
+        String timeStr = jsonRoot.getString("time", "").trim();
+        existingRecipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
+        existingRecipe.setDescription(jsonRoot.getString("description"));
+        existingRecipe.setInstructions(jsonRoot.getString("instructions"));
+
+        existingRecipe.setDate(originalDate);
+
+        AppUser webUser = appUserFacade.getUserById(14L);
+        existingRecipe.setUser(webUser);
+
+        Recipe updatedRecipe = recipeFacade.updateRecipe(existingRecipe);
+        sendAsJson(response, updatedRecipe);
+
     }
 
     @Override
@@ -175,40 +199,6 @@ public class RestRecipe extends HttpServlet {
             out.print("{}");
         }
         out.flush();
-    }
-
-    private Recipe parseJsonupdateRecipe(BufferedReader br) {
-        JsonReader jsonReader = Json.createReader(br);
-        JsonObject jsonRoot = jsonReader.readObject();
-
-        Recipe recipe = new Recipe();
-
-        // Parse and set Recipe ID if it exists
-        if (jsonRoot.containsKey("id")) {
-            try {
-                String idStr = jsonRoot.get("id").toString().replaceAll("\"", "");
-                long id = Long.parseLong(idStr);
-                recipe.setRecipeID(id);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid recipe ID format in JSON");
-            }
-        }
-        
-        recipe.setRecipeNo(jsonRoot.getString("no"));
-        recipe.setTitle(jsonRoot.getString("title"));
-        String costStr = jsonRoot.getString("cost", "").trim();
-        recipe.setCost(costStr.isEmpty() ? 0 : Double.parseDouble(costStr));
-
-        String timeStr = jsonRoot.getString("time", "").trim();
-        recipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
-        recipe.setDescription(jsonRoot.getString("description"));
-        recipe.setInstructions(jsonRoot.getString("instructions"));
-
-        // Set a fixed AppUser to avoid DB error on update
-        AppUser webUser = appUserFacade.getUserById(14L);
-        recipe.setUser(webUser);
-
-        return recipe;
     }
     
     private Recipe parseJsonRecipe(BufferedReader br) {
