@@ -13,6 +13,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
   <!-- Font Awesome (optional if you’re using icons) -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
@@ -20,8 +21,8 @@
 <body>
   <div class="page-container">
 	  
-	  <%-- Include the header (header.jsp) --%>
-	  <%@ include file="/fragments/header.jsp" %>
+	  <%-- Include the header (header2.jsp) --%>
+	  <%@ include file="/fragments/header2.jsp" %>
 	  
 	  <div class="layout">
 	    
@@ -36,7 +37,7 @@
 	      <h2>Our Founders</h2>
 	      <div class="founders-grid">
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-ah.jpg" alt="Founder 1" />
+	          <img src="${pageContext.request.contextPath}/images/founder-ah.jpeg" alt="Founder 1" />
 	          <h3>Amelie Hörnfeldt</h3>
 	          <p>Backend Developer</p>
 	        </div>
@@ -46,25 +47,25 @@
 	          <p>Backend Developer</p>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-ps.jpg" alt="Founder 3" />
+	          <img src="${pageContext.request.contextPath}/images/founder-ps.jpeg" alt="Founder 3" />
 	          <h3>Peggy Schnitzer</h3>
 	          <p>Frontend Developer</p>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-if.jpg" alt="Founder 4" />
+	          <img src="${pageContext.request.contextPath}/images/founder-if.jpeg" alt="Founder 4" />
 	          <h3>Isak Frankfeldt</h3>
 	          <p>All-round/Mood manager</p>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-to.jpg" alt="Founder 5" />
+	          <img src="${pageContext.request.contextPath}/images/founder-to.jpeg" alt="Founder 5" />
 	          <h3>Tobias Omming</h3>
 	          <p>Senorita Awesome</p>
 	        </div>
 	      </div>
 	    </main>
 	  </div>
-	  <%-- Include the footer --%>
-	  <%@ include file="/fragments/footer.jsp" %>
+	  <%-- Include the footer (footer2.jsp) --%>
+	  <%@ include file="/fragments/footer2.jsp" %>
   </div>
 </body>
 </html>

@@ -8,18 +8,21 @@
 .form-container {
   flex: 1;
   padding: 40px;
-  background-color: #f9f9f9;
+  background-color: #e65a33;
   font-family: 'Inter';
-  border-color: #5f8772;
   height: 88vh;
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15); /* subtle shadow below */
+}
+
+#title {
+  color: #fbe984;
+  font-family: 'Helvetica Neue';
 }
 
 form label {
   display: block;
   margin: 15px 0 5px;
   font-weight: 600;
-  color: #2d4c3f;
+  color: #fbe984;
 }
 
 input[type="text"] {
@@ -29,10 +32,9 @@ input[type="text"] {
   border-radius: 8px;
   border: 1px solid #ccc;
   background-color: #fff;
-  color: #2d4c3f;
+  color: #333;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
   font-family: 'Inter';
-  color: #333;
   outline: none;
   transition: box-shadow 0.2s ease;
   
@@ -40,10 +42,10 @@ input[type="text"] {
 
 input[type="text"]::placeholder,
 textarea::placeholder {
-  color: #999;
+  color: #9f9f9f;
   font-family: 'Inter';
   transition: box-shadow 0.2s ease;
-  border-color: #5f8772;
+  border-color: black;
 }
 
 input[type="text"]:focus,
@@ -51,7 +53,7 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus,
 .ts-wrapper.single.focus .ts-control {
-  border-color: #5f8772 !important;
+  border-color: black !important;
   box-shadow: 0 0 6px rgba(95, 135, 114, 0.3) !important;
   outline: none !important;
 }
@@ -71,6 +73,7 @@ ul#selected-ingredients {
   background: transparent;
   transition: background 0.3s ease;
   flex: none; /* prevents resizing */
+  color: #333;
 }
 
 ul#selected-quantities {
@@ -83,12 +86,12 @@ ul#selected-ingredients {
 }
 
 ul#selected-ingredients.filled {
-  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.4);
   background-color: #f3f3f3;
-}
+  }
 
 ul#selected-quantities.filled {
-  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.3);
+  box-shadow: inset 0 0 6px rgba(95, 135, 114, 0.4);
   background-color: #f3f3f3;
 }
 
@@ -113,7 +116,7 @@ textarea {
   border-radius: 8px;
   border: 1px solid #ccc;
   padding: 12px;
-  color: #2d4c3f;
+  color: #333;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);  font-size: 1rem;
 }
 
@@ -127,13 +130,13 @@ textarea {
   background-color: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.2s ease;
-  border-color: #5f8772;
+  border-color: #fbe984;
 }
 
 /* Style the button */
 .add-ingredient-btn {
   padding: 12px 20px;
-  background-color: #5f8772;
+  background-color: #fbe984;
   color: white;
   border: none;
   border-radius: 6px;
@@ -247,21 +250,39 @@ textarea {
   margin-top: 30px;
   text-align: center;
 }
-
+  
 .add {
-  background-color: #a0b497;
-  color: white;
+  background-color: #fbe984;
+  color: #e65a33;
   border: none;
   border-radius: 6px;
   padding: 12px 20px;
   font-size: 1em;
   cursor: pointer;
+  height: 50px;
   width: 200px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s;
+  font-style: bold;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .add:hover {
-  background-color: #4e735f;
+  background-color: #fbe984;
+  color: #e65a33;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  font-style: bold;
+  font-family: 'Archivo Black', sans-serif;
+  /* 🌟 Glow effect */
+  box-shadow:
+    0 0 10px #fbe984;
+  transition: all 0.3s ease;
 }
 
 .error-message {

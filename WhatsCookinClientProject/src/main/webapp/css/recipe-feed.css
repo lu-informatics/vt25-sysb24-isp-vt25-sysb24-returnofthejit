@@ -4,7 +4,6 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #e65a33;
-  font-family: 'Inter', sans-serif;
 }
 
 .feed {
@@ -12,6 +11,7 @@
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Inter', sans-serif;
 }
 
 #page-title {
@@ -86,7 +86,7 @@
 
 /* === BACK === */
 .recipe-card-back {
-  background-color: #fbe984;
+  background-color: #B3DFF2;
   color: #fff;
   z-index: 1;
   opacity: 0;
@@ -102,19 +102,19 @@
 .recipe-card-front h4 {
   font-size: 1.6rem;
   margin: 0 0 10px;
-  color: #e65a33;
+  color: #805D3A;
   font-family: 'Archivo Black', sans-serif;
 }
 
 .recipe-card-front .user {
   font-size: 0.8rem;
   margin-bottom: 30px;
-  color: #e65a33;
+  color: #805D3A;
 }
 
 .recipe-card-front .description {
   font-size: 1rem;
-  color: #e65a33;
+  color: #805D3A;
 }
 
 .recipe-meta {
@@ -124,7 +124,7 @@
   justify-content: space-around;
   margin-top: 40px;
   margin-bottom: 20px;
-  color: #e65a33;
+  color: #805D3A;
   gap: 30px;
 }
 
@@ -135,8 +135,8 @@
 /* === Back Content === */
 .view-button {
   background-color: #fbe984;
-  color: #e65a33;
-  border-color: #e65a33;
+  color: #805D3A;
+  border-color: #805D3A;
   border-width: 5px;
   padding: 12px 24px;
   font-weight: bold;
@@ -148,7 +148,7 @@
 }
 
 .view-button:hover {
-  background-color: #e65a33;
+  background-color: #805D3A;
   color: #fbe984;
   border-width: 5px;
   padding: 12px 24px;

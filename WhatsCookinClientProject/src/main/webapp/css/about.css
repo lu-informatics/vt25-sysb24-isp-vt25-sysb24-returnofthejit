@@ -15,7 +15,7 @@
 
 .about-content h1 {
   font-size: 2.5rem;
-  color: #2d4c3f;
+  color: #e65a33;
   margin-bottom: 20px;
 }
 
@@ -28,7 +28,7 @@
 
 .about-content h2 {
   font-size: 2rem;
-  color: #2d4c3f;
+  color: #e65a33;
   margin-bottom: 20px;
 }
 
@@ -39,14 +39,14 @@
 }
 
 .founder-card {
-  width: 180px;
+  width: 200px;
   text-align: center;
   font-family: 'Inter';
 }
 
 .founder-card img {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

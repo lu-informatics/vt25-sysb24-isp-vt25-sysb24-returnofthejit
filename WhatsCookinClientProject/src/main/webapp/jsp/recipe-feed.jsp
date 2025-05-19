@@ -10,8 +10,8 @@
   <title>Recipe Feed</title>
 
   <!-- Local stylesheet -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css?v=2" />
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/recipe-feed.css?v=3" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/recipe-feed.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
 <body>
   <div class="page-container">
     
+    <%-- Include the header (header.jsp) --%>
     <%@ include file="/fragments/header.jsp" %>
     
     <div class="layout">
@@ -56,6 +57,7 @@
       </main>
     </div>
 
+    <%-- Include the header (footer.jsp) --%>
     <%@ include file="/fragments/footer.jsp" %>
   </div>
 </body>

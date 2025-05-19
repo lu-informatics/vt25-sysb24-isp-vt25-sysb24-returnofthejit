@@ -1,8 +1,8 @@
 .site-footer {
   width: 100%;
-  background-color: #fbe984;
+  background-color: #d65230;
   font-size: 0.9rem;
-  color: #d65230;
+  color: #fbe984;
   text-align: center;
   clear: both;
   height: 100px;
@@ -22,12 +22,12 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  height: 0.9rem;
 }
 
 .site-footer a {
-  color: #d65230;
+  color: #fbe984;
   text-decoration: none;
-  height: 17px;
 }
 
 .site-footer a:hover {
