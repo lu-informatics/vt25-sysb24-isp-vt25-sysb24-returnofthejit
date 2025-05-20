@@ -10,7 +10,7 @@
   padding: 40px;
   background-color: #e65a33;
   font-family: 'Inter';
-  height: 88vh;
+  min-height: 88vh;
 }
 
 #title {

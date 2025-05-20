@@ -6,18 +6,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
 
-<div style="width: 100%;">
- <header class="site-header">
-  <div class="header-container">
-    <div class="logo">
-      <a href="${pageContext.request.contextPath}/controller?action=home">What's Cookin'</a>
-    </div>
-    <nav class="nav-links">
-      <a href="${pageContext.request.contextPath}/controller?action=home">Home</a>
-      <a href="${pageContext.request.contextPath}/controller?action=recipefeed">Recipes</a>
-      <a href="${pageContext.request.contextPath}/controller?action=addrecipe">Add Recipe</a>
-      <a href="${pageContext.request.contextPath}/controller?action=about">About</a>
+
+<header class="site-header">
+ <div class="header-container">
+   <div class="logo">
+     <a href="${pageContext.request.contextPath}/controller?action=home">What's Cookin'</a>
+   </div>
+   <nav class="nav-links">
+     <a href="${pageContext.request.contextPath}/controller?action=home">Home</a>
+     <a href="${pageContext.request.contextPath}/controller?action=recipefeed">Recipes</a>
+     <a href="${pageContext.request.contextPath}/controller?action=addrecipe">Add Recipe</a>
+     <a href="${pageContext.request.contextPath}/controller?action=about">About</a>
     </nav>
   </div>
 </header>
-</div>
