@@ -286,13 +286,13 @@ textarea {
 }
 
 .error-message {
-  color: #c0392b;
+  color: #fff;
   font-size: 0.9rem;
   margin-top: 5px;
   font-weight: 500;
 }
 
 .input-error {
-  border: 2px solid #c0392b !important;
+  border: 2px solid #fff !important;
   box-shadow: none !important;
 }

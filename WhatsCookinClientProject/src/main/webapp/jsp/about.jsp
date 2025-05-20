@@ -93,7 +93,7 @@
 	          </div>
 	          <div class="founder-info">
 		          <h3>Isak Frankfeldt</h3>
-		          <p>All-round/Mood manager</p>
+		          <p>Weather reporter</p>
 		      </div>
 	        </div>
 	        <div class="founder-card">
@@ -108,7 +108,7 @@
 	          </div>
 	          <div class="founder-info">
 		          <h3>Tobias Omming</h3>
-		          <p>Senorita Awesome</p>
+		          <p>Assistant backend developer</p>
 		      </div>
 	        </div>
 	      </div>

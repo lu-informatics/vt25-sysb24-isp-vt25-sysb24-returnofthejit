@@ -85,9 +85,19 @@
 
 /* === BACK === */
 .founder-card-back {
-  background-color: #B3DFF2;
-  color: white;
+  background-color: white;
+  color: black;
   transform: rotateY(180deg);
+}
+
+.founder-card-back a {
+	text-decoration: none;
+	color: #e65a33;
+}
+
+.founder-card-back a:hover {
+	text-decoration: underline;
+	color: #e65a33;
 }
 
 #contact-me {

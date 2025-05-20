@@ -38,8 +38,7 @@
 			  </div>
 			  <div class="right-column">
 			    <p>
-			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, justo sit amet suscipit volutpat, neque sem luctus nisi, in feugiat nisi justo ac orci.
-			    </p>
+					Discover and share recipes with ease on What's Cookin' — a friendly spot for home cooks to swap ideas, find new favorites, and explore new flavors every day.			    </p>
 			  </div>
 			</section>
 	      <div class="wavy-banner">

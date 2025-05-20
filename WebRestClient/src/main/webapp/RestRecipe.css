@@ -14,14 +14,14 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #7a9e7e;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
 nav {
-    background-color: #333;
+    background-color: #444;
 }
 
 nav ul {
@@ -86,7 +86,7 @@ textarea {
 button {
     padding: 10px 20px;
     margin: 5px 5px 10px 0;
-    background-color: #4CAF50;
+    background-color: #7a9e7e;
     border: none;
     border-radius: 5px;
     color: white;
@@ -95,15 +95,15 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5f7f63;
 }
 
 button.danger {
-    background-color: #f44336;
+    background-color: #b85c4c;
 }
 
 button.danger:hover {
-    background-color: #d32f2f;
+    background-color: #94463a;
 }
 
 footer {
