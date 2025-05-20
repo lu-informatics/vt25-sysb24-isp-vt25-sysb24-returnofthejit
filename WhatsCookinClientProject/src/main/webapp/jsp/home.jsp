@@ -28,7 +28,10 @@
 	
 	    <!-- Main Content -->
 	    <main class="home-content">
-	      <h1 id="title-home">SHARING IS CARING</h1>
+	      <h1 id="title-home">
+	      	SHARING IS<br />
+	      	CARING
+	      </h1>
 	      <div class="image-wrapper">
 	        <img src="${pageContext.request.contextPath}/images/homepagehands.png" alt="Hands Image" class="hands-img" />
 	      </div>

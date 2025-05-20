@@ -10,12 +10,14 @@ body {
   display: flex;
   justify-content: flex-end;  /* Push image to the right */
   overflow-x: hidden;         /* Prevent weird scroll */
+  align-items: center;
 }
 
 .hands-img {
-  max-width: 100%;
+  max-width: none;
   height: auto;
   object-fit: contain;
+  width: 89vw;
 }
 
 .page-container {
