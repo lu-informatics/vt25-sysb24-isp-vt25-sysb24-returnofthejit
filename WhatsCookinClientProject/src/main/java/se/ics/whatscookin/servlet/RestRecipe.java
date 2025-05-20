@@ -21,6 +21,7 @@ import se.ics.whatscookin.facade.RecipeFacadeLocal;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet("/Recipes/*")
@@ -134,8 +135,9 @@ public class RestRecipe extends HttpServlet {
         existingRecipe.setTime(timeStr.isEmpty() ? 0 : Double.parseDouble(timeStr));
         existingRecipe.setDescription(jsonRoot.getString("description"));
         existingRecipe.setInstructions(jsonRoot.getString("instructions"));
-
-        existingRecipe.setDate(originalDate);
+        existingRecipe.setDate(LocalDateTime.now());
+        
+        
 
         AppUser webUser = appUserFacade.getUserById(14L);
         existingRecipe.setUser(webUser);
