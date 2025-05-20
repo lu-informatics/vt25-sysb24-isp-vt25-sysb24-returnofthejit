@@ -14,6 +14,8 @@
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  
 
   <!-- Tom Select CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet" />
@@ -27,7 +29,7 @@
 	  <div class="layout">
 	
 	    <main class="form-container">
-	      <h2>Add Recipe</h2>
+	      <h2 id="title">Add Recipe</h2>
 	      <form id="recipe-form" method="post" action="${pageContext.request.contextPath}/controller?action=saverecipe">
 	        <label>Enter Recipe Name:</label>
 	        <input type="text" name="recipeName" placeholder="Ex. Pasta Carbonara" required />
@@ -83,7 +85,7 @@
 	      </form>
 	    </main>
 	  </div>
-	  <%-- Include the footer --%>
+	  <%-- Include the footer (footer.jsp) --%>
 	  <%@ include file="/fragments/footer.jsp" %>
 	</div>
   <!-- Load Tom Select first -->

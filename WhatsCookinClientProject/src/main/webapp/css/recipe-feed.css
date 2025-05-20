@@ -4,7 +4,6 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #e65a33;
-  font-family: 'Inter', sans-serif;
 }
 
 .feed {
@@ -12,18 +11,20 @@
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Inter', sans-serif;
 }
 
 #page-title {
   font-size: 3rem;
   text-align: center;
-  color: #fff;
+  color: #fbe984;
   font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 10px;
 }
 
 #discover {
   text-align: center;
-  color: #fff;
+  color: #fbe984;
   margin-bottom: 2rem;
   font-weight: 600;
 }
@@ -42,7 +43,7 @@
   height: 300px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   background-color: #fff;
 }
 
@@ -66,6 +67,8 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 12px;
+  align-items: center;
+  text-align: center;
 }
 
 /* === FRONT === */
@@ -83,7 +86,7 @@
 
 /* === BACK === */
 .recipe-card-back {
-  background-color: #5f8772;
+  background-color: #B3DFF2;
   color: #fff;
   z-index: 1;
   opacity: 0;
@@ -99,49 +102,62 @@
 .recipe-card-front h4 {
   font-size: 1.6rem;
   margin: 0 0 10px;
-  color: #2d4c3f;
+  color: #805D3A;
   font-family: 'Archivo Black', sans-serif;
 }
 
 .recipe-card-front .user {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  color: #6a6c6e;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+  color: #805D3A;
 }
 
 .recipe-card-front .description {
   font-size: 1rem;
-  color: #444;
+  color: #805D3A;
 }
 
-/* === Back Content === */
 .recipe-meta {
   font-size: 1rem;
   font-family: 'Courier New', monospace;
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  color: #805D3A;
+  gap: 30px;
 }
 
 .recipe-meta i {
   margin-right: 6px;
 }
 
+/* === Back Content === */
 .view-button {
   background-color: #fbe984;
-  color: #2d4c3f;
-  border: none;
+  color: #805D3A;
+  border-color: #805D3A;
+  border-width: 5px;
   padding: 12px 24px;
   font-weight: bold;
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-style: solid;
 }
 
 .view-button:hover {
-  background-color: #f7d953;
+  background-color: #805D3A;
+  color: #fbe984;
+  border-width: 5px;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-style: solid;
 }
 
 /* === Responsive === */

@@ -13,6 +13,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
   <!-- Font Awesome (optional if you’re using icons) -->
   <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
@@ -20,8 +21,8 @@
 <body>
   <div class="page-container">
 	  
-	  <%-- Include the header (header.jsp) --%>
-	  <%@ include file="/fragments/header.jsp" %>
+	  <%-- Include the header (header2.jsp) --%>
+	  <%@ include file="/fragments/header2.jsp" %>
 	  
 	  <div class="layout">
 	    
@@ -36,35 +37,85 @@
 	      <h2>Our Founders</h2>
 	      <div class="founders-grid">
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-ah.jpg" alt="Founder 1" />
-	          <h3>Amelie Hörnfeldt</h3>
-	          <p>Backend Developer</p>
+	          <div class="card-inner">
+	        	<div class="founder-card-front">
+		          <img src="${pageContext.request.contextPath}/images/founder-ah.jpeg" alt="Founder 1" />
+		        </div>
+		         <div class="founder-card-back">
+	            	<p id="contact-me">Hi, I'm Amelie! Contact me on:</p>
+      				<a href="mailto:amelie@whatscookin.com">amelie@whatscookin.com</a>
+	            </div>
+	          </div>
+	          <div class="founder-info">
+		          <h3>Amelie Hörnfeldt</h3>
+		          <p>Backend Developer</p>
+		      </div>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-hg.jpg" alt="Founder 2" />
-	          <h3>Hugo Gunnarson</h3>
-	          <p>Backend Developer</p>
+	          <div class="card-inner">
+	        	<div class="founder-card-front">
+	              <img src="${pageContext.request.contextPath}/images/founder-hg.png" alt="Founder 2" />
+	            </div>
+	             <div class="founder-card-back">
+	            	<p id="contact-me">Hi, I'm Hugo! Contact me on:</p>
+      				<a href="mailto:hugo@whatscookin.com">hugo@whatscookin.com</a>
+	            </div>
+	          </div>
+	          <div class="founder-info">
+		          <h3>Hugo Gunnarson</h3>
+		          <p>Backend Developer</p>
+		      </div>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-ps.jpg" alt="Founder 3" />
-	          <h3>Peggy Schnitzer</h3>
-	          <p>Frontend Developer</p>
+	          <div class="card-inner">
+	        	<div class="founder-card-front">
+	              <img src="${pageContext.request.contextPath}/images/founder-ps.png" alt="Founder 3" />
+	            </div>
+	            <div class="founder-card-back">
+	            	<p id="contact-me">Hi, I'm Peggy! Contact me on:</p>
+      				<a href="mailto:peggy@whatscookin.com">peggy@whatscookin.com</a>
+	            </div>
+	          </div>
+	          <div class="founder-info">
+		          <h3>Peggy Schnitzer</h3>
+		          <p>Frontend Developer</p>
+		      </div>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-if.jpg" alt="Founder 4" />
-	          <h3>Isak Frankfeldt</h3>
-	          <p>All-round/Mood manager</p>
+	          <div class="card-inner">
+	        	<div class="founder-card-front">
+	          	  <img src="${pageContext.request.contextPath}/images/founder-if.jpeg" alt="Founder 4" />
+	          	</div>
+	          	 <div class="founder-card-back">
+	            	<p id="contact-me">Hi, I'm Isak! Contact me on:</p>
+      				<a href="mailto:isak@whatscookin.com">isak@whatscookin.com</a>
+	            </div>
+	          </div>
+	          <div class="founder-info">
+		          <h3>Isak Frankfeldt</h3>
+		          <p>Weather reporter</p>
+		      </div>
 	        </div>
 	        <div class="founder-card">
-	          <img src="${pageContext.request.contextPath}/images/founder-to.jpg" alt="Founder 5" />
-	          <h3>Tobias Omming</h3>
-	          <p>Senorita Awesome</p>
+	          <div class="card-inner">
+	        	<div class="founder-card-front">
+	              <img src="${pageContext.request.contextPath}/images/founder-to.png" alt="Founder 5" />
+	            </div>
+	            <div class="founder-card-back">
+	            	<p id="contact-me">Hi, I'm Tobias! Contact me on:</p>
+      				<a href="mailto:tobias@whatscookin.com">tobias@whatscookin.com</a>
+	            </div>
+	          </div>
+	          <div class="founder-info">
+		          <h3>Tobias Omming</h3>
+		          <p>Assistant backend developer</p>
+		      </div>
 	        </div>
 	      </div>
 	    </main>
 	  </div>
-	  <%-- Include the footer --%>
-	  <%@ include file="/fragments/footer.jsp" %>
+	  <%-- Include the footer (footer2.jsp) --%>
+	  <%@ include file="/fragments/footer2.jsp" %>
   </div>
 </body>
 </html>

@@ -38,19 +38,16 @@
 			  </div>
 			  <div class="right-column">
 			    <p>
-			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, justo sit amet suscipit volutpat, neque sem luctus nisi, in feugiat nisi justo ac orci.
-			    </p>
+					Discover and share recipes with ease on What's Cookin' — a friendly spot for home cooks to swap ideas, find new favorites, and explore new flavors every day.			    </p>
 			  </div>
 			</section>
 	      <div class="wavy-banner">
 			  <img src="${pageContext.request.contextPath}/svg/wave-banner.svg" alt="Wavy banner" />
 		  </div>
-
-		  <p id="slogan">Recipes worth sharing!</p>
 	      
 	      <div class="stat-box">
-	        <h2>Aktivitet idag</h2>
-	        <p><strong>${nbrOfRecipesToday}</strong> recept har skapats idag.</p>
+	        <h2>Activity today</h2>
+	        <p><strong>${nbrOfRecipesToday}</strong> recipes have been made today.</p>
 	      </div>
 
 	      <!-- Weather Section -->
